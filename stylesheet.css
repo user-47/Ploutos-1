@@ -1,0 +1,94 @@
+/* Add a black background color to the top navigation */
+
+body{
+    margin: 0px;
+    /* padding: 0% 20%; */
+    position: absolute;
+    /* margin-top: 150px; */
+}
+
+.topnav {
+    position: fixed;
+    background-color:#5A81B5;
+    overflow: hidden;
+    width: 100%;
+    height: 40px;
+    margin-top: 0px;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+  }
+
+  .topnav form {
+float: right;
+margin-right: 20px;
+/* height: 40px; */
+  }
+
+
+  input[type="text"]{ 
+      line-height: 28px;
+     }
+
+     input[type="password"]{ 
+        line-height: 28px;
+       }
+  
+  input[type=submit] {
+    padding:5px 15px; 
+    background:linear-gradient(143deg, #E00017, #AC0981); 
+    border:0 none;
+    cursor:pointer;
+    height: 40px;
+    width: 100px;
+    /* -webkit-border-radius: 5px; */
+    border-radius: 5px; 
+    color: white;
+    font-family: 'Myriad Pro Regular', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+  
+
+
+
+input[value=Email] {
+color: grey;
+}
+ 
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add an active class to highlight the current page */
+  .topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  /* Hide the link that should open and close the topnav on small screens */
+  .topnav .icon {
+    display: none;
+  }
+
+  .mainBody {
+      margin-top:50px;
+  }
+
+  .background {
+      position: relative;
+      width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .bgcolor{
+      /* padding: 0% 3%; */
+      position: relative;
+  }
+  .bgImage {
+/* float: right; */
+position: absolute;
+  }
