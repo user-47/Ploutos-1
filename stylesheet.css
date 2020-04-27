@@ -14,6 +14,7 @@ body{
     width: 100%;
     height: 40px;
     margin-top: 0px;
+    z-index: 999;
   }
   
   /* Style the links inside the navigation bar */
@@ -50,8 +51,6 @@ margin-right: 20px;
 }
   
 
-
-
 input[value=Email] {
 color: grey;
 }
@@ -86,9 +85,49 @@ color: grey;
 
   .bgcolor{
       /* padding: 0% 3%; */
-      position: relative;
+      position: absolute;
+      /* z-index: 0; */
   }
   .bgImage {
-/* float: right; */
+
+opacity: 1;
+left: 1000px;
+top: 50px;
 position: absolute;
+/* margin-right: 20px; */
+margin-top: 50px;
+  }
+
+  .h1text {
+    color: #073068;
+    font-family: 'Myriad Pro Regular', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    font-size: 2.5em;
+    top: 125px;
+    position: absolute;
+    left: 100px;
+    line-height: 70px;
+  }
+
+  .ngnFlag {
+    position: absolute;
+    top: 250px;
+    left: 350px;
+  }
+
+  .CADFlag {
+    position: absolute;
+    top: 320px;
+    left: 470px;
+  }
+
+  .tagline {
+    color: #073068;
+    font-family: 'Myriad Pro Regular', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* text-transform: uppercase; */
+    /* font-size: 2.5em; */
+    top: 425px;
+    position: absolute;
+    left: 100px;
+    /* line-height: 70px; */
   }
