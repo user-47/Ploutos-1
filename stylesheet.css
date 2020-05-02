@@ -2,9 +2,8 @@
 
 body{
     margin: 0px;
-    /* padding: 0% 20%; */
     position: absolute;
-    /* margin-top: 150px; */
+    max-width: 800px;
 }
 
 .topnav {
@@ -17,10 +16,12 @@ body{
     z-index: 999;
   }
   
-  /* Style the links inside the navigation bar */
-  .topnav a {
-    float: left;
-  }
+
+
+    /* Change the color of links on hover */
+    .topnav a:hover {
+      background-color: rgb(231, 85, 85)
+    }
 
   .topnav form {
 float: right;
@@ -39,15 +40,18 @@ margin-right: 20px;
   
   input[type=submit] {
     padding:5px 15px; 
-    background:linear-gradient(143deg, #E00017, #AC0981); 
-    border:0 none;
-    cursor:pointer;
+    background-color: #C12222;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
     height: 40px;
     width: 100px;
-    /* -webkit-border-radius: 5px; */
-    border-radius: 5px; 
     color: white;
     font-family: 'Myriad Pro Regular', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(231, 85, 85)
 }
   
 
@@ -55,18 +59,8 @@ input[value=Email] {
 color: grey;
 }
  
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  /* Add an active class to highlight the current page */
-  .topnav a.active {
-    background-color: #4CAF50;
-    color: white;
-  }
-  
+
+
   /* Hide the link that should open and close the topnav on small screens */
   .topnav .icon {
     display: none;
@@ -84,18 +78,24 @@ color: grey;
   }
 
   .bgcolor{
-      /* padding: 0% 3%; */
       position: absolute;
-      /* z-index: 0; */
+      left: 30px;
   }
-  .bgImage {
 
+  .bgImage {
 opacity: 1;
 left: 1000px;
 top: 50px;
 position: absolute;
-/* margin-right: 20px; */
 margin-top: 50px;
+  }
+
+  .bigLogo {
+position: absolute;
+top: 150px;
+left: 100px;
+z-index: -1;
+
   }
 
   .h1text {
@@ -124,10 +124,64 @@ margin-top: 50px;
   .tagline {
     color: #073068;
     font-family: 'Myriad Pro Regular', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    /* text-transform: uppercase; */
-    /* font-size: 2.5em; */
-    top: 425px;
+    top: 400px;
     position: absolute;
     left: 100px;
-    /* line-height: 70px; */
+    width: 150px;
+    line-height: 130%;
+  }
+
+  .joinNow {
+    top: 550px;
+    left: 100px;
+    position: absolute;
+    width: 100px;
+    text-align: center;
+    background-color: #C12222;
+    padding: 12px 24px;
+    border: none;
+   
+  }
+
+  .joinNow a{
+    color: white;
+    font-size: 1.1em;
+    text-decoration: none;
+    font-family: 'Myriad Pro Regular', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+  }
+
+  .joinNow:hover {
+    background-color: rgb(231, 85, 85);
+  }
+
+  .footer {
+    position: absolute;
+    left: 30px;
+    top: 800px;
+    width: 600px;
+    color: #073068;
+    text-align: center;
+    
+  }
+
+
+
+  .footer li {
+    list-style: none;
+    display: inline;
+    padding: 30px;
+    font-family: 'Myriad Pro Regular', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+font-size: .7em;
+  }
+
+  .footer a {
+    text-decoration: none;
+  
+    
+  }
+  .footer a:hover {
+    background-color:#A9C5EB54;
+    padding: 10px;
+    font-weight: bold;
   }
