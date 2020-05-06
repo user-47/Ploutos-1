@@ -1,63 +1,75 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Xchanger</title>
-        <link href="stylesheet.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="fontawesome">
-        <!-- Favicon -->
-        <link href="imgs/temp_logo.svg" rel="shortcut icon" />
-    </head>
-    <body>
- <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="fontawesome">
 
-<div class="topnav">
-  <a href="#"> <img src="imgs/temp_logo.svg"></a>
-  <form action="/action_page.php" method="GET" id="login">
-    <input type="text" id="email" name="Email Address" placeholder="Email Address">
-    <input type="password" id="password" name="Password" placeholder="Password">
-    <input type="submit" id="submit" name="submit" value="Login">
-  </form>
-</div>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-<div class="background">
-<img src="imgs/bgcolor.svg" class="bgcolor" alt="Blue Color" width="1200px" height="761px">
-<img src="imgs/tempLogoBig.svg" class="bigLogo" alt="Big Background Logo" width="1000px" height="auto">
-<img src="imgs/bgImage.png" class="bgImage" alt="Background Image" width="381px" height="550px">
+    <!-- Favicon -->
+      <link href="imgs/temp_logo.svg" rel="shortcut icon" />
 
-</div>
+    <title>Xchanger</title>
+    <link href="stylesheet.css" rel="stylesheet">
+  </head>
+  <body>
+    <div style="width: 100vw; height: 100vh;">
+      <nav class="navbar navbar-expand-lg navbar-light topnav">
+        <a class="navbar-brand" href="#"><img src="imgs/temp_logo.svg" style="width: 70px;"></a>
+        <button class="navbar-toggler"  type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" style="color: white;"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content: flex-end;">
+          
+            <form class="form-inline my-2 my-lg-0" action="/action_page.php" method="GET" id="login">
+              <input class="form-control mr-sm-2" id="email" type="text" name="Email Address" placeholder="Email Address" aria-label="Email Address">
+              <input class="form-control mr-sm-2" id="password" type="text" name="Password" placeholder="Password" aria-label="Password">
+              <button class="btn my-2 my-sm-0" id="submit" type="submit">Login</button>
+            </form>
+        </div>
+      </nav>
+      <div style="height: 100%;">
+        <div class="content-background">
+          <div class="content-container">
+            <div class="h1text">
+              Exchange<br> 
+              Naira <img src="imgs/ngnflag.png" class="flag"><br>
+              and CAD <img src="imgs/CADflag.png" class="flag">
+            </div>
+              
+            
+              
+            <h5 class="tagline">
+              Define your own rates
+              Fast and Effortless 
+              Trusted network 
+              Competitive rates
+            </h5>
+        
+            <button class="btn joinNow">Join Now!</button>
+          </div>
+          <img src="imgs/bgImage.png" class="bgImage" alt="Background Image" >
+          
+        </div>
+        <div class="footer">
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">How it works</a></li>
+          <li><a href="#">Terms and Conditions</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      </div>
+    </div> 
 
-
-<div class="h1text">
-  <h1>
-    Exchange Naira and CAD
-  </h1>
-  </div>
-  
-    <img src="imgs/ngnflag.png" class="ngnFlag">
-    <img src="imgs/CADflag.png" class="CADFlag">
-  
-<h5 class="tagline">
-  Define your own rates<br>
-  Fast and Effortless <br>
-  Trusted network <br>
-  Competitive rates<br>
-</h5>
-
-<div class="joinNow">
-<a href="#">
-  Join Now!</a>
-</div>
-
-
-<div class="footer">
-  <ul>
-<li><a href="#">About Us</a></li>
-<li><a href="#">How it works</a></li>
-<li><a href="#">Terms and Conditions</a></li>
-<li><a href="#">Contact</a></li>
-  </ul>
-</div>
-
-
-    </body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
 </html>
