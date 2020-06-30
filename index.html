@@ -17,18 +17,20 @@
   </head>
   <body>
     <div style="width: 100vw; height: 100vh;">
-      <nav class="navbar navbar-expand-lg navbar-light topnav">
-        <a class="navbar-brand" href="#"><img src="imgs/temp_logo.svg" style="width: 70px;"></a>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-light topnav">
+        <a class="navbar-brand" href="#"><img src="imgs/temp_logo.svg"></a>
         <button class="navbar-toggler"  type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon" style="color: white;"></span>
         </button>
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content: flex-end;">
           
-            <form class="form-inline my-2 my-lg-0" action="/action_page.php" method="GET" id="login">
+            <form class="form-inline my-2 my-lg-0" id="login">
+          
               <input class="form-control mr-sm-2" id="email" type="text" name="Email Address" placeholder="Email Address" aria-label="Email Address">
-              <input class="form-control mr-sm-2" id="password" type="text" name="Password" placeholder="Password" aria-label="Password">
-              <button class="btn my-2 my-sm-0" id="submit" type="submit">Login</button>
+              <input class="form-control mr-sm-2" id="password" type="password" name="Password" placeholder="Password" aria-label="Password">
+              <a href="home.html">
+              <button class="btn my-2 my-sm-0" id="submit" type="submit">Login</button></a>
             </form>
         </div>
       </nav>
@@ -54,6 +56,9 @@
           </div>
           <img src="imgs/bgImage.png" class="bgImage" alt="Background Image" >
           
+
+
+
         </div>
         <div class="footer">
         <ul>
@@ -61,6 +66,7 @@
           <li><a href="#">How it works</a></li>
           <li><a href="#">Terms and Conditions</a></li>
           <li><a href="#">Contact</a></li>
+          <li><a href="home.html">Test Homepage</a></li>
         </ul>
       </div>
       </div>

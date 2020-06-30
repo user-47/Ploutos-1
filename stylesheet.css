@@ -1,9 +1,58 @@
 /* Add a black background color to the top navigation */
 
-/* body{
-    width: 100vw;
-    height: 100vh;
+body{
+    /* width: 100vw;
+    height: 100vh;  */
+padding-top: 65px;
+}
+
+#main a {
+  color: #1b1b2e;
+}
+
+#main a:hover {
+  
+  background-color: rgb(55, 60, 112);
+  color: white;
+  /* text-decoration-color: snow; */
+}
+
+.float-right .card-footer a:hover {
+  color: white !important ;
+}
+
+.text-danger a:hover{
+  color: white;
+}
+.active {
+  background-color: rgb(55, 60, 112) !important;
+}
+
+#active a {
+  color: white;
+}
+/* FULL DARK MODE (incase we implement it - WIP code) */
+/* body a{
+  color: white;
+}
+
+body p{
+  color: white;
+}
+
+.card {
+  background-color: #1b1b2e !important;
 } */
+
+
+
+.homeBody {
+  background: #1b1b2e;
+  /* background: white; */
+}
+
+
+
 
 .topnav {
     /* position: fixed; */
@@ -16,11 +65,6 @@
   }
   
 
-
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: rgb(231, 85, 85)
-}
 
 .topnav form {
 float: right;
@@ -49,7 +93,7 @@ button[type=submit] {
   font-family: 'Myriad Pro Regular', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-input[type=submit]:hover {
+button[type=submit]:hover {
   background-color: rgb(231, 85, 85)
 }
 
