@@ -28,7 +28,7 @@ padding-top: 65px;
   background-color: rgb(55, 60, 112) !important;
 }
 
-#active a {
+#sidePanel a {
   color: white;
 }
 /* FULL DARK MODE (incase we implement it - WIP code) */
@@ -45,13 +45,29 @@ body p{
 } */
 
 
+#newPost {
+  position: fixed;
+  bottom: 14px;
+  right: 50px;
+  
+}
+
+.btn-danger {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  /* position: fixed; */
+}
+
 
 .homeBody {
   background: #1b1b2e;
   /* background: white; */
 }
 
-
+#topnav {
+  background-color: #1b1b2e !important;
+}
 
 
 .topnav {
