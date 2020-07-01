@@ -25,28 +25,34 @@
 <section id="main">
   <div class="container">
     <div class="row">
+     
       <div class="col-md-3">
      
-        <div class="list-group position-fixed">
-          <!-- <a href="index.html" class="list-group-item active main-color-bg">
-            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard 
-          </a> -->
-          <div id="active">
+        <div class="list-group d-none d-md-block position-fixed">
+          
+         <div class="bg-white">
+          <div id="sidePanel">
           <a href="#" class="list-group-item active"><i class="fa fa-home" aria-hidden="true"></i> Home </a>
         </div>
           <a href="#" class="list-group-item "><i class="fa fa-search" aria-hidden="true"></i> Search </a>
           <a href="saved.html" class="list-group-item"><i class="fa fa-heart" aria-hidden="true"></i></span> Saved <span class="badge">20</span></a>
           <a href="#" class="list-group-item"><i class="fa fa-envelope" aria-hidden="true"></i> Messages <span class="badge">5</span></a>
           <a href="#" class="list-group-item"><i class="fa fa-user" aria-hidden="true"></i></span> My Profile </a>
-      
+          <!-- <hr> -->
+          <a href="#" class="list-group-item"><i class="fa fa-gear" aria-hidden="true"></i></span> Settings </a>
+        </div>
+
                 <div class="text-center">
         <a href="index.html" class="text-danger" ><i class="fa fa-power-off" aria-hidden="true"></i><b>Logout</b>  </a>
                </div>
         </div>
+      
      
-      </div>
+    </div>
 
        <!-- User Timeline -->
+
+        
 
       <div class="col-md-9">
     
@@ -69,6 +75,8 @@
             </div>
           </div>
 
+        
+       
 
           <div class="card bg-light mb-3" style="max-width: 35rem;">
             <div class="card-header">
@@ -200,19 +208,131 @@
                 <b>BUY  SOME...</b></a>
                 <a href="#" class=" card-footer text-dark text-decoration-none">
                   <b>BUY ALL </b></a>
-            </div>
-            </div>
+            </div> 
+            </div>     
+            <!-- <div id="newPost"> 
+              <button type="button" class="btn btn-danger btn-lg"> <i class="fa fa-plu"></i>New </i> </button>
+            </div> -->
+
           </div>
-        
         </div>
       </div>
-      </div>
+  </div>
   
+  <div class="row fixed-bottom">
+    <div class="col-md-9">
+      <a type="button" data-toggle="modal" data-target="#newPost" class="float-right">
+      <button type="button" class="btn btn-danger btn-lg text-center"> <i class="fa fa-pencil-square-o"></i>
+        <br>New </i> </button></a>
+      <!-- <h1  class="float-right"> TEST </h1> -->
+      </div>
+      </div>
+
+      
+      </div>
+      </div>
+
+      
+        
+<div class="d-md-none">
+      <nav class="navbar navbar-default navbar-expand-lg fixed-top navbar-dark bg-success" role="navigation" id="topnav">
+        <div class="container-fluid" id="nav_content">
+            
+           
+            <div class="navbar-header float-left">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navredirect,#dropdowns" aria-controls="navredirect" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+            </div>
+            <div id="navredirect" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                 
+                  <div class="col-md-3">
+     
+                    <div class="list-group">
+                     
+                      <div id="sidePanel">
+                      <a href="#" class="list-group-item active"><i class="fa fa-home" aria-hidden="true"></i> Home </a>
+                    </div>
+                      <a href="#" class="list-group-item "><i class="fa fa-search" aria-hidden="true"></i> Search </a>
+                      <a href="saved.html" class="list-group-item"><i class="fa fa-heart" aria-hidden="true"></i></span> Saved <span class="badge">20</span></a>
+                      <a href="#" class="list-group-item"><i class="fa fa-envelope" aria-hidden="true"></i> Messages <span class="badge">5</span></a>
+                      <a href="#" class="list-group-item"><i class="fa fa-user" aria-hidden="true"></i></span> My Profile </a>
+                      <hr>
+                      <a href="#" class="list-group-item"><i class="fa fa-gear" aria-hidden="true"></i></span> Settings </a>
+                  
+                            <div class="text-center">
+                    <a href="index.html" class="text-danger" ><i class="fa fa-power-off" aria-hidden="true"></i><b>Logout</b>  </a>
+                           </div>
+                    </div>
+                 
+                  </div>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+  </div>
+
+
 </section>
 
 
 
+  <!-- Add Page -->
+  <div class="modal fade" id="newPost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <form>
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel">Create New Post</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>I Have</label> <input type="number" placeholder="100" class="form-group w-25">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Dollars 
+                
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a type="button" data-toggle="modal" data-target="#addPage" > Dollar (CAD)</a></li>
+                <li><a type="button" data-toggle="modal" data-target="#addPage" > Naira (NGN)</a></li>
+              </ul>
+           
+              <br>
+            <label> I Need</label> 
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Naira
+            
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><a type="button" data-toggle="modal" data-target="#addPage" > Dollar (CAD)</a></li>
+              <li><a type="button" data-toggle="modal" data-target="#addPage" > Naira (NGN)</a></li>
+            </ul>
+            <hr>
+            
+            <label >Rate: </label> <input type="number" placeholder="280" class="form-group w-25">
+          </div>
+          <div class="modal-footer">
+            
+            <button type="submit" class="btn btn-success">Post</button>
+          </div>
 
+      </form>
+      </div>
+    </div>
+  </div>
+  
+
+
+  
+
+    <script>
+       CKEDITOR.replace( 'editor1' );
+   </script>
 
 
 
