@@ -1,6 +1,7 @@
 import React from 'react';
-import { Navbar, Form, FormControl, Button } from "react-bootstrap";
-import RegistrationModal from '../components/Modal/RegistrationModal.comp'
+import Button from "react-bootstrap/Button";
+import SignUpModal from '../components/Modal/SignUpModal.comp';
+import Header from '../components/Header/Header.comp';
 
 
 const LandingPage = () => {
@@ -8,23 +9,7 @@ const LandingPage = () => {
 
   return (
     <div>
-      <Navbar style={{display: "flex", justifyContent: "space-between", backgroundColor: "#5A81B5",}}>
-        <Navbar.Brand href="#home">
-          <img
-            src="../assets/images/temp_logo.svg"
-            width="75"
-            height="65"
-            className="d-inline-block align-top"
-            alt="logo"
-          />
-          {/* <Logo /> */}
-        </Navbar.Brand>
-        <Form inline style={{width: "40%", justifyContent: "flex-end"}}>
-          <FormControl type="text" placeholder="Email" className="mr-sm-2" style={{width: "35%" }} />
-          <FormControl type="text" placeholder="Password" className="mr-sm-2" style={{width: "35%" }} />
-          <Button variant="danger" style={{width: "15%" }}>Login</Button>
-        </Form>
-      </Navbar>
+      <Header />
       <div style={{backgroundImage: "url('../assets/images/bgcolor.png')", height: "80vh", width: "80%", marginLeft: "3%", display: "flex", justifyContent: "space-between"}}>
         <div style={{ width: "70%", height: "85%", padding: "5%", paddingLeft: "8%", display: "flex", flexDirection: "column", justifyContent: "center"}}>
           <div style={{ fontSize: "5.5em", fontWeight: "700", lineHeight: "75px", color: "#073068"}}>
@@ -45,7 +30,7 @@ const LandingPage = () => {
           >
             Join Now
           </Button>
-          <RegistrationModal 
+          <SignUpModal 
             show={modalShow}
             onHide={() => setModalShow(false)}
           />
