@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.styles.css';
+import { Link } from 'react-router-dom'
 import { Navbar, Form, Button, Col } from "react-bootstrap";
 import * as Yup from 'yup';
 import { Formik } from 'formik';
@@ -14,7 +15,7 @@ const Header = () => (
   <Navbar style={{display: "flex", justifyContent: "space-between", backgroundColor: "#5A81B5",}}>
     <Navbar.Brand href="#home">
       <img
-        src="../assets/images/temp_logo.svg"
+        src="../../assets/images/temp_logo.svg"
         width="75"
         height="65"
         className="d-inline-block align-top"
@@ -75,7 +76,10 @@ const Header = () => (
               </Form.Control.Feedback>
             </Form.Group>
           </Form.Row>
-          <Button type="submit" variant="danger" style={{width: "15%", marginLeft: "2%" }}>Login</Button>
+          <Link to="/home" style={{width: "15%", marginLeft: "2%" }}>
+            <Button type="submit" variant="danger" style={{width: "100%"}}>Login</Button>
+          </Link>
+          
         </Form>
       )}
     </Formik>

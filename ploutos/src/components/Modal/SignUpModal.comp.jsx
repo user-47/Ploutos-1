@@ -146,11 +146,13 @@ const SignUpModal = (props) => {
             </Form>
           )}
           </Formik>
+          
           <div style={{ display: "flex", justifyContent: "center", marginBottom: "3%"}}>or sign up with:</div>
           <div style={{display: "flex", justifyContent: "center" }}>
             <div style={{display: "flex", justifyContent: "space-between", width: "30%", marginBottom: "3%" }}>
-              <img src="../assets/icons/facebook-icon.svg" alt="facebook icon" />
-              <img src="../assets/icons/google-icon.svg" alt="google icon" />
+              <img src="../../assets/icons/facebook-icon.svg" alt="facebook icon" />
+              {/* <div style={{ backgroundImage: "url(../../assets/images/temp_logo.svg)", width: "50px", height: "50px", backgroundSize: "cover" }}></div> */}
+              <img src="../../assets/icons/google-icon.svg" alt="google icon" />
             </div>
           </div>
           <div>
