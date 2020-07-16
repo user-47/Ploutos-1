@@ -24,7 +24,7 @@ const HomePage = () => (
       <div style={{ width: "65%", height: "100%", display: "flex", flexDirection: "column" }}>
         {
           posts.map(() => (
-            <div style={{ width: "600px", height: "340px", marginBottom: "2%" }}>
+            <div style={{ width: "600px", height: "300px", marginBottom: "2%" }}>
               <Card>
                 <Card.Header style={{ display: "flex", alignItems: "center" }}>
                   <div style={{ width: "50px", height: "50px", borderRadius: "50%", backgroundColor: "pink" }}></div>
@@ -49,7 +49,23 @@ const HomePage = () => (
             </div>
           ))
         }
-        
+        <div 
+          style={{
+            color: "white", 
+            display: "flex", 
+            width: "82%", 
+            justifyContent: "flex-end", 
+            position: "fixed", 
+            right: "0", 
+            left: "0", 
+            bottom: "0", 
+            zIndex: "1000"
+          }}>
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "90px", height: "90px", borderRadius: "50%", backgroundColor: "red"}}>
+              new post
+            </div>
+            
+          </div>
       </div>
     </div>
 	</div>
