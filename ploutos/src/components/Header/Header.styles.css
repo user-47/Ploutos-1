@@ -1,0 +1,25 @@
+.navbar-container{
+  display: flex;
+  justify-content: space-between;
+  background-color: #5A81B5;
+}
+
+.form-container{
+  display: flex;
+  width: 40%;
+  justify-content: flex-end;
+  height: 38px;
+}
+
+.login-form-row{
+  width: 75%;
+}
+
+.btn-link{
+  width: 15%;
+  margin-left: 2%;
+}
+
+.login-btn{
+  width: 100%;
+}

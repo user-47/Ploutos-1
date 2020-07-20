@@ -1,0 +1,63 @@
+.landing-page-body{
+  background-image: url('../../assets/images/bgcolor.png'); 
+  height: 80vh;
+  width: 80%;
+  margin-left: 3%;
+  display: flex; 
+  justify-content: space-between;
+}
+
+.landing-page-container{
+  width: 70%; 
+  height: 85%;
+  padding: 5%; 
+  padding-left: 8%; 
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+}
+
+.landing-page-main-caption{
+  font-size: 5.5em;
+  font-weight: 700;
+  line-height: 75px;
+  color: #073068;
+}
+
+.nation-flag{
+  height: 55px;
+  margin-top: -2%;
+}
+
+.landing-page-subtext{
+  font-size: 18px; 
+  font-weight: 500; 
+  color: #073068;
+  padding-left: 2%;
+  margin-top: 5%;
+}
+
+.join-now-btn{
+  width: 20%; 
+  margin-top: 3%;
+}
+
+.landing-page-secondary-bg-image{
+  background-image: url('../../assets/images/bgImage.png');
+  background-repeat: no-repeat;
+  height: 70vh;
+  width: 27%;
+  margin-top: 2%;
+  position: absolute;
+  right: 4%;
+}
+
+.landing-page-footer{
+  color: #073068; 
+  width: 40%; 
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2%; 
+  margin-left: 3%;
+  font-size: 14px;
+}

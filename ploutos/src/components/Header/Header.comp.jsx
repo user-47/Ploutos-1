@@ -12,7 +12,7 @@ const schema = Yup.object({
 });
 
 const Header = () => (
-  <Navbar style={{display: "flex", justifyContent: "space-between", backgroundColor: "#5A81B5",}}>
+  <Navbar className="navbar-container">
     <Navbar.Brand href="#home">
       <img
         src="../../assets/images/temp_logo.svg"
@@ -41,8 +41,8 @@ const Header = () => (
         isValid,
         errors,
       }) => (
-        <Form noValidate onSubmit={handleSubmit} style={{ display: "flex", width: "40%", justifyContent: "flex-end", height: "38px"}}>
-          <Form.Row style={{width: "75%" }}>
+        <Form noValidate onSubmit={handleSubmit} className="form-container">
+          <Form.Row className="login-form-row">
             <Form.Group as={Col} md="6" controlId="validationFormik03">
               {/* <Form.Label>Email</Form.Label> */}
               <Form.Control
@@ -76,8 +76,8 @@ const Header = () => (
               </Form.Control.Feedback>
             </Form.Group>
           </Form.Row>
-          <Link to="/home" style={{width: "15%", marginLeft: "2%" }}>
-            <Button type="submit" variant="danger" style={{width: "100%"}}>Login</Button>
+          <Link to="/home" className="btn-link">
+            <Button type="submit" variant="danger" className="login-btn">Login</Button>
           </Link>
           
         </Form>
