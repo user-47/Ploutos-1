@@ -39,10 +39,10 @@ const LandingPage = () => {
         <div className="landing-page-secondary-bg-image"></div>
       </div>
       <div className="landing-page-footer">
-        <div>About</div>
-        <div>How it works</div>
-        <div>Terms and Conditions</div>
-        <div>Contact</div>
+        <div className="landing-page-footer-links">About</div>
+        <div className="landing-page-footer-links">How it works</div>
+        <div className="landing-page-footer-links">Terms and Conditions</div>
+        <div className="landing-page-footer-links">Contact</div>
       </div>
     </div>
   )
