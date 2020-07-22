@@ -25,7 +25,7 @@ const Header = () => {
           className="d-inline-block align-top"
           alt="logo"
         />
-        <img src="../../assets/icons/hamburger-menu.svg" className="hamburger-icon" onClick={() => setHidden(!hidden)} />
+        <img src="../../assets/icons/hamburger-menu.svg" alt="menu icon" className="hamburger-icon" onClick={() => setHidden(!hidden)} />
       </Navbar.Brand>
 
       <Formik
