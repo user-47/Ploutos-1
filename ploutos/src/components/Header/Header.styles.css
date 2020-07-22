@@ -1,0 +1,72 @@
+.hamburger-icon{
+  display: none;
+}
+
+.navbar-container{
+  display: flex;
+  justify-content: space-between;
+  background-color: #5A81B5;
+}
+
+.form-container{
+  display: flex;
+  width: 40%;
+  justify-content: flex-end;
+  height: 38px;
+}
+
+.login-form-row{
+  width: 75%;
+}
+
+.btn-link{
+  width: fit-content;
+  margin-left: 2%;
+}
+
+.login-btn{
+  width: 100%;
+}
+
+@media screen and (max-width: 750px) and (min-width: 300px) {
+  .hamburger-icon{
+    display: block;
+  }
+
+  .responsive-navbrand{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .form-container{
+    display: none;
+  }
+
+  .responsive-form-container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4%;
+    margin-bottom: 5%;
+    justify-content: flex-end;
+    height: fit-content;
+  }
+
+  .responsive-navbar-container{
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .responsive-login-form-row{
+    width: 100%;
+  }
+
+  .responsive-btn-link{
+    margin-left: 0;
+    width: 100%;
+  }
+}
