@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from "react-bootstrap/Button";
-import SignUpModal from '../../components/Modal/SignUpModal.comp';
+import SignUpModal from '../../components/Modal/SignUpModal/SignUpModal.comp';
 import Header from '../../components/Header/Header.comp';
 import './LandingPage.styles.css';
 
