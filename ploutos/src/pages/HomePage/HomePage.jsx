@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Card, Button } from 'react-bootstrap';
-import NewPostModal from '../../components/Modal/NewPostModal/NewPostModal.comp'
+import NewPostModal from '../../components/Modal/NewPostModal/NewPostModal.comp';
+import PostContainer from '../../components/PostContainer/PostContainer.comp'
 import './HomePage.styles.css';
+import { createStructuredSelector } from 'reselect';
+import { selectPostDetails } from '../../redux/post/post.selectors';
+import { connect } from 'react-redux';
 
 
-const HomePage = () => {
+const HomePage = ({posts}) => {
 
-  const posts = [50, 60, 70, 80, 90, 100];
+  // const posts = [50, 60, 70, 80, 90, 100];
   const sideBarLinks = ["Home", "Search", "Saved", "Messages", "My Profile", "Settings", "Logout"];
   const [activeLink, setActiveLink] = useState("Home");
   const [modalShow, setModalShow] = useState(false);
@@ -56,28 +59,13 @@ const HomePage = () => {
         </div>
         <div className="post-section">
           {
-            posts.map(() => (
-              <div className="post-container">
-                <Card>
-                  <Card.Header className="post-card-header">
-                    <div className="post-card-avatar"></div>
-                    <div className="ml-4">User Name</div>
-                  </Card.Header>
-                  <Card.Body>
-                    <Card.Title><b>CAD for NAIRA</b></Card.Title>
-                    <Card.Text>
-                      I have <b>50 CAD</b> for sale, looking to exchange for <b>Naira (NGN)</b> at the rate of <b>290</b> per Dollar
-                    </Card.Text>
-                    <hr></hr>
-                    <div className="post-card-footer">
-                      <Button className="text-dark post-card-footer-btn"><b>xx</b></Button>
-                      <Button className="mx-1 text-dark post-card-footer-btn"><b>Buy Some...</b></Button>
-                      <Button className="text-dark post-card-footer-btn"><b>Buy All</b></Button>
-                    </div>
-                    
-                  </Card.Body>
-                </Card>
-              </div>
+            posts.map(({haveAmount, haveCurrency, wantedCurrency, rate}) => (
+              <PostContainer
+                haveAmount={haveAmount}
+                haveCurrency={haveCurrency}
+                wantedCurrency={wantedCurrency}
+                rate={rate}
+              />
             ))
           }
           <div className="new-post-btn" onClick={() => setModalShow(true)}>
@@ -95,4 +83,8 @@ const HomePage = () => {
   )
 }
 
-export default HomePage;
+const mapStateToProps = createStructuredSelector({
+  posts: selectPostDetails
+});
+
+export default connect(mapStateToProps)(HomePage);

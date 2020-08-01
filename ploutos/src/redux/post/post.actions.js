@@ -1,6 +1,6 @@
 import { postActionTypes } from './post.types';
 
-export const newPost = post => ({
+export const createNewPost = postDetails => ({
   type: postActionTypes.NEW_POST,
-  payload: post
+  payload: postDetails
 });

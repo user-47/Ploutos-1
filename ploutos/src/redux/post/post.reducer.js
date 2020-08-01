@@ -1,11 +1,14 @@
 import { postActionTypes } from './post.types';
+import { createNewPost } from './post.utils';
 
 
 const INITIAL_STATE = {
-  buyingCurrency: 'NGN',
-  selling: null,
-  sellingCurrency: 'CAD',
-  rate: 290,
+  isFavorite: false,
+  postDetailsCollection: [],
+  // buyingCurrency: 'NGN',
+  // selling: null,
+  // sellingCurrency: 'CAD',
+  // rate: 290,
 }
 
 const postReducer = (state = INITIAL_STATE, action) => {
@@ -13,6 +16,7 @@ const postReducer = (state = INITIAL_STATE, action) => {
     case postActionTypes.NEW_POST:
       return {
         ...state,
+        postDetailsCollection: createNewPost(state.postDetailsCollection, action.payload)
       }
       break;
   

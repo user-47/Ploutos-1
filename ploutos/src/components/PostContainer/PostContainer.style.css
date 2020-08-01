@@ -1,0 +1,51 @@
+.post-container{
+  width: 600px;
+  height: 300px;
+  margin-bottom: 2%;
+}
+
+.post-card-header{
+  display: flex;
+  align-items: center;
+}
+
+.post-card-avatar{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: pink;
+}
+
+.post-card-footer{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.post-card-footer-btn{
+  background-color: rgba(0,0,0,.1);
+  padding: 0.85rem;
+  border: none;
+}
+
+.new-post-btn{
+  color: white;
+  display: flex;
+  width: 82%;
+  justify-content: flex-end;
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.new-post-btn-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: red;
+}
