@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import './PostContainer.style.css';
 
-const PostContainer = ({userName, haveAmount, haveCurrency, wantedCurrency, rate}) => (
+const PostContainer = ({userName, sellingAmount, sellingCurrency, buyingCurrency, rate}) => (
   <div className="post-container">
     <Card>
       <Card.Header className="post-card-header">
@@ -12,7 +12,7 @@ const PostContainer = ({userName, haveAmount, haveCurrency, wantedCurrency, rate
       <Card.Body>
         <Card.Title><b>CAD for NAIRA</b></Card.Title>
         <Card.Text>
-          I have <b>{haveAmount} {haveCurrency}</b> for sale, looking to exchange for <b>{wantedCurrency}</b> at the rate of <b>{rate}</b> per Dollar
+          I have <b>{sellingAmount} {sellingCurrency}</b> for sale, looking to exchange for <b>{buyingCurrency}</b> at the rate of <b>{rate}</b> per Dollar
         </Card.Text>
         <hr></hr>
         <div className="post-card-footer">

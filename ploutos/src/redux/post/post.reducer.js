@@ -18,11 +18,8 @@ const postReducer = (state = INITIAL_STATE, action) => {
         ...state,
         postDetailsCollection: createNewPost(state.postDetailsCollection, action.payload)
       }
-      break;
-  
     default:
       return state;
-      break;
   }
 };
 

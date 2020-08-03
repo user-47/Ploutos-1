@@ -13,7 +13,7 @@
 }
 
 .sidebar-container{
-  height: 350px; 
+  height: 450px; 
   width: 35%; 
   display: flex; 
   justify-content: center;
@@ -27,8 +27,13 @@
 }
 
 .sidebar-link-cell{
-  height: 14.2857%; 
+  height: 16.6667%;
   border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+}
+
+.logout-link{
+  text-align: center;
+  color: red;
 }
 
 .sidebar-link-cell:hover .sidebar-link{
@@ -58,3 +63,25 @@
   flex-direction: column;
 }
 
+.new-post-btn{
+  color: white;
+  display: flex;
+  width: fit-content;
+  justify-content: flex-end;
+  position: fixed;
+  right: 19%;
+  /* left: 0; */
+  bottom: 0;
+  z-index: 1000;
+}
+
+.new-post-btn-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: red;
+  cursor: pointer;
+}

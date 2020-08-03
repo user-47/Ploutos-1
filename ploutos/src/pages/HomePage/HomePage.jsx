@@ -11,9 +11,13 @@ import { connect } from 'react-redux';
 const HomePage = ({posts}) => {
 
   // const posts = [50, 60, 70, 80, 90, 100];
-  const sideBarLinks = ["Home", "Search", "Saved", "Messages", "My Profile", "Settings", "Logout"];
+  const sideBarLinks = ["Home", "Search", "Saved", "Messages", "My Profile", "Settings"];
   const [activeLink, setActiveLink] = useState("Home");
   const [modalShow, setModalShow] = useState(false);
+  
+  const postCreated = () =>{
+    setModalShow(false)
+  }
 
   const switchActiveTab = (indexValue) => {
     switch (indexValue) {
@@ -49,33 +53,36 @@ const HomePage = ({posts}) => {
             {
               sideBarLinks.map((link, index) => (
                 <div className={`sidebar-link-cell ${ link === activeLink ? 'active' : ''}`} key={index} onClick={() => switchActiveTab(sideBarLinks.indexOf(link))}>
-                  <Link className="sidebar-link">
+                  <Link to={'/home'} className="sidebar-link">
                     {link}
                   </Link>
                 </div>
               ))
             }
+            <div className="logout-link">Logout</div>
           </div>
         </div>
         <div className="post-section">
           {
-            posts.map(({haveAmount, haveCurrency, wantedCurrency, rate}) => (
+            posts.map(({sellingAmount, sellingCurrency, buyingCurrency, rate}, index) => (
               <PostContainer
-                haveAmount={haveAmount}
-                haveCurrency={haveCurrency}
-                wantedCurrency={wantedCurrency}
+                sellingAmount={sellingAmount}
+                sellingCurrency={sellingCurrency}
+                buyingCurrency={buyingCurrency}
                 rate={rate}
+                key={index}
               />
             ))
           }
-          <div className="new-post-btn" onClick={() => setModalShow(true)}>
-            <div className="new-post-btn-text">
+          <div className="new-post-btn">
+            <div className="new-post-btn-text" onClick={() => setModalShow(true)}>
               new post
             </div>   
           </div>
           <NewPostModal
             show={modalShow}
             onHide={() => setModalShow(false)}
+            postCreated={postCreated}
           />
         </div>
       </div>
