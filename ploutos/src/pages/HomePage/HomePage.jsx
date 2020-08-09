@@ -10,7 +10,6 @@ import { connect } from 'react-redux';
 
 const HomePage = ({posts}) => {
 
-  // const posts = [50, 60, 70, 80, 90, 100];
   const sideBarLinks = ["Home", "Search", "Saved", "Messages", "My Profile", "Settings"];
   const [activeLink, setActiveLink] = useState("Home");
   const [modalShow, setModalShow] = useState(false);

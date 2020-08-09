@@ -1,18 +1,10 @@
 import React from 'react';
 import { Modal, Button, Form, Col } from "react-bootstrap";
-// import * as Yup from 'yup';
-// import { Formik } from 'formik';
 import { connect } from 'react-redux';
 import { createNewPost } from '../../../redux/post/post.actions';
 import ValidationController from '../../../controllers/ValidationController';
 
 
-// const schema = Yup.object({
-//   sellingAmount: Yup.number().required(),
-//   sellingCurrency: Yup.string().required(),
-//   buyingCurrency: Yup.string().required(),
-//   rate: Yup.number().required()
-// });
 
 const NewPostModal = ({createPost, show, onHide, postCreated}) => {
 
@@ -21,10 +13,9 @@ const NewPostModal = ({createPost, show, onHide, postCreated}) => {
     sellingCurrency: 'CAD',
     buyingCurrency: 'NGN',
     rate: ''
-  })
+  });
 
-  // const {show, onHide} = props
-  
+  const currencyOptions = ['CAD', 'NGN'];
 
   const [errorMessage, setErrorMessage] = React.useState('');
 
@@ -53,7 +44,7 @@ const NewPostModal = ({createPost, show, onHide, postCreated}) => {
           [name]: value,
         }, console.log(postDetails));
         break;
-    }
+    };
   }
 
   const handleSubmit = (e) => {
@@ -126,7 +117,6 @@ const NewPostModal = ({createPost, show, onHide, postCreated}) => {
                 // isValid={touched.sellingCurrency && !errors.sellingCurrency}
                 // isInvalid={!!errors.sellingCurrency}
               >
-                {/* <option>{}</option> */}
                 <option>CAD</option>
                 <option>NGN</option>
               </Form.Control>
