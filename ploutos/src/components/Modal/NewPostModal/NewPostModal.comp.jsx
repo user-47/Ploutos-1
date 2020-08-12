@@ -52,22 +52,27 @@ const NewPostModal = ({createPost, show, onHide, postCreated}) => {
     console.log(postDetails)
     const {sellingAmount, sellingCurrency, buyingCurrency, rate} = postDetails
     
-    const allValuesAreFilled = ValidationController.areInputsEmpty(sellingAmount, sellingCurrency, buyingCurrency, rate);
+    // run validations and return boolean value
+    const allValuesAreFilled = ValidationController.areNewPostInputsEmpty(sellingAmount, sellingCurrency, buyingCurrency, rate);
     const allValuesAreValid = ValidationController.validateNumberTypeInput(postDetails.sellingAmount) && ValidationController.validateNumberTypeInput(postDetails.rate);
 
     console.log(allValuesAreValid, allValuesAreFilled)
 
+    // if validations are fine then process to create new post else display error message
     if (allValuesAreFilled && allValuesAreValid){
+      // create post
       createPost(postDetails)
+      // set input fields to default values
       setPostDetails({
         sellingAmount: '',
         sellingCurrency: 'CAD',
         buyingCurrency: 'NGN',
         rate: ''
       })
+      // close modal after post has been created
       postCreated()
     } else {
-      setErrorMessage('Please input valid values in all fields')
+      setErrorMessage('Please fill valid inputs in all fields')
     }
   }
   
