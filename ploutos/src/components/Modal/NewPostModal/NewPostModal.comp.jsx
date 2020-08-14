@@ -157,6 +157,7 @@ const NewPostModal = ({createPost, show, onHide, closeOnSubmit}) => {
             </Form.Group>
           </Form.Row>
           <hr></hr>
+          <div style={{ marginBottom: '3%', marginLeft: "-5px"}}>Please Input the rate that works for you</div>
           <Form.Row className="signup-modal-form-row" style={{ alignItems: "center"}}>
             <div>Rate : </div>
             <Form.Group as={Col} md="4" style={{ margin: "0" }} controlId="validationFormik04">

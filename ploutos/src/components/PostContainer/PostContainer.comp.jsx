@@ -2,20 +2,34 @@ import React, { useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import BuySomeModal from '../Modal/BuySomeModal/BuySomeModal.comp';
 import BuyAllModal from '../Modal/BuyAllModal/BuyAllModal.comp';
+import TransactionInitializationModal from '../Modal/TransactionInitializationModal/TransactionInitialization.comp';
 import './PostContainer.style.css';
 
 const PostContainer = ({userName, sellingAmount, sellingCurrency, buyingCurrency, rate}) => {
 
   const [buySomeModalShow, setBuySomeModalShow] = useState(false);
-
   const [buyAllModalShow, setBuyAllModalShow] = useState(false);
+  const [transactionIntiatedModalShow, setTransactionIntiatedModalShow] = React.useState(false);
 
-  const handleBuySomeModalClose = () =>{
-    setBuySomeModalShow(false)
+  const handleBuySomeModalClose = () => {
+    setBuySomeModalShow(false);
+    setTransactionIntiatedModalShow(true);
+  };
+  const handleCloseOnCancel = () => {
+    setBuySomeModalShow(false);
   };
 
-  const handleBuyAllModalClose = () =>{
-    setBuyAllModalShow(false)
+  const handleModalCloseWithYesBtn = () => {
+    setBuyAllModalShow(false);
+    setTransactionIntiatedModalShow(true);
+  };
+
+  const handleModalCloseWithNoBtn = () => {
+    setBuyAllModalShow(false);
+  }
+
+  const handleOkayBtn = () => {
+    setTransactionIntiatedModalShow(false)
   };
 
   return(
@@ -40,11 +54,18 @@ const PostContainer = ({userName, sellingAmount, sellingCurrency, buyingCurrency
             show={buySomeModalShow}
             onHide={() => setBuySomeModalShow(false)}
             closeOnSubmit={handleBuySomeModalClose}
+            closeWithCancelBtn={handleCloseOnCancel}
           />
           <BuyAllModal
             show={buyAllModalShow}
             onHide={() => setBuyAllModalShow(false)}
-            closeOnSubmit={handleBuyAllModalClose}
+            closeWithYesBtn={handleModalCloseWithYesBtn}
+            closeWithNoBtn={handleModalCloseWithNoBtn}
+          />
+          <TransactionInitializationModal
+            show={transactionIntiatedModalShow}
+            onHide={() => setTransactionIntiatedModalShow(false)}
+            closeOnSubmit={handleOkayBtn}
           />
           
         </Card.Body>

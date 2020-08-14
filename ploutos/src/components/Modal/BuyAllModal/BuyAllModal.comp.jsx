@@ -4,18 +4,19 @@ import ValidationController from '../../../controllers/ValidationController';
 
 
 
-const BuyAllModal = ({show, onHide, closeOnSubmit}) => {
+const BuyAllModal = ({show, onHide, closeWithYesBtn, closeWithNoBtn}) => {
 
   const [errorMessage, setErrorMessage] = React.useState('');
+  
 
   const handleYes = () => {
     console.log('user clicked yes')
-    closeOnSubmit()
+    closeWithYesBtn()
   };
 
   const handleNo = () => {
     console.log('user clicked no');
-    closeOnSubmit()
+    closeWithNoBtn()
   };
 
   return (

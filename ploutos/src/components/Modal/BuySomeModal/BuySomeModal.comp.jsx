@@ -5,7 +5,7 @@ import TransactionInitializationModal from '../TransactionInitializationModal/Tr
 
 
 
-const BuySomeModal = ({show, onHide, closeOnSubmit}) => {
+const BuySomeModal = ({show, onHide, closeOnSubmit, closeWithCancelBtn}) => {
 
   const [buyingAmount, setBuyingAmount] = React.useState('');
 
@@ -34,15 +34,16 @@ const BuySomeModal = ({show, onHide, closeOnSubmit}) => {
     if (allValuesAreFilled && allValuesAreValid){
       setBuyingAmount('')
       closeOnSubmit();
-      setTransactionIntiatedModalShow(true);
+      // setTransactionIntiatedModalShow(true);
+      console.log('closed current and open other')
     } else {
       setErrorMessage('Please input valid values in all fields')
     }
   }
   
-  const handleOkayBtn = () => {
-    setTransactionIntiatedModalShow(false)
-  }
+  // const handleOkayBtn = () => {
+  //   setTransactionIntiatedModalShow(false)
+  // }
 
   return (
     <Modal
@@ -86,17 +87,17 @@ const BuySomeModal = ({show, onHide, closeOnSubmit}) => {
           
           <div style={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
             <div style={{ display: 'flex', width: '35%', justifyContent: 'space-between' }}>
-              <Button type="submit" variant="secondary" className="">Cancel</Button>
-              <Button type="submit" variant="danger" className="" style={{ float: "right" }}>Buy</Button>
+              <Button variant="secondary" className="" onClick={() => closeWithCancelBtn()}>Cancel</Button>
+              <Button type="submit" variant="success" className="" style={{ float: "right" }}>Buy</Button>
             </div>
           </div>
           
         </Form>
-        <TransactionInitializationModal
+        {/* <TransactionInitializationModal
           show={transactionIntiatedModalShow}
           onHide={() => setTransactionIntiatedModalShow(false)}
           closeOnSubmit={handleOkayBtn}
-        />
+        /> */}
       </Modal.Body>
     </Modal>
   );
