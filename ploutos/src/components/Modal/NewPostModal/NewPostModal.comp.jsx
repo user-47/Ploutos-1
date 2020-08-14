@@ -6,7 +6,7 @@ import ValidationController from '../../../controllers/ValidationController';
 
 
 
-const NewPostModal = ({createPost, show, onHide, postCreated}) => {
+const NewPostModal = ({createPost, show, onHide, closeOnSubmit}) => {
 
   const [postDetails, setPostDetails] = React.useState({
     sellingAmount: '',
@@ -70,7 +70,7 @@ const NewPostModal = ({createPost, show, onHide, postCreated}) => {
         rate: ''
       })
       // close modal after post has been created
-      postCreated()
+      closeOnSubmit()
     } else {
       setErrorMessage('Please fill valid inputs in all fields')
     }

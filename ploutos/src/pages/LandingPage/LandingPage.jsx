@@ -7,6 +7,9 @@ import './LandingPage.styles.css';
 
 const LandingPage = () => {
   const [modalShow, setModalShow] = React.useState(false);
+  const handleModalClose = () =>{
+    setModalShow(false)
+  }
 
   return (
     <div>
@@ -34,6 +37,7 @@ const LandingPage = () => {
           <SignUpModal 
             show={modalShow}
             onHide={() => setModalShow(false)}
+            closeOnSubmit={handleModalClose}
           />
         </div>
         <div className="landing-page-secondary-bg-image"></div>

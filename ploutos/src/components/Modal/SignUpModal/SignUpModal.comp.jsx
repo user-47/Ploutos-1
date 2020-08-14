@@ -4,7 +4,7 @@ import ValidationController from '../../../controllers/ValidationController';
 import './SignUpModal.styles.css';
 
 
-const SignUpModal = (props) => {
+const SignUpModal = ({closeOnSubmit, ...props}) => {
 
   const [signupDetails, setSignupDetails] = React.useState({
     firstName: '',
@@ -47,6 +47,7 @@ const SignUpModal = (props) => {
         password: '',
         confirmPassword: ''
       });
+      closeOnSubmit()
       console.log('sign up successful')
     } else {
       setErrorMessage('Please fill in all fields correctly')

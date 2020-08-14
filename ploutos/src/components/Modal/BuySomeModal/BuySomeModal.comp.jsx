@@ -1,44 +1,48 @@
 import React from 'react';
 import { Modal, Button, Form, Col } from "react-bootstrap";
 import ValidationController from '../../../controllers/ValidationController';
+import TransactionInitializationModal from '../TransactionInitializationModal/TransactionInitialization.comp';
 
 
 
-const BuySomeModal = ({show, onHide}) => {
+const BuySomeModal = ({show, onHide, closeOnSubmit}) => {
 
   const [buyingAmount, setBuyingAmount] = React.useState('');
 
   const [errorMessage, setErrorMessage] = React.useState('');
 
+  const [transactionIntiatedModalShow, setTransactionIntiatedModalShow] = React.useState(false);
+
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { value } = e.target;
+
+    setErrorMessage('');
+    
+    setBuyingAmount(value);
 
   }
 
   const handleSubmit = (e) => {
-    // e.preventDefault()
-    // console.log(postDetails)
-    // const {sellingAmount, sellingCurrency, buyingCurrency, rate} = postDetails
+    e.preventDefault()
+    console.log(buyingAmount)
     
-    // const allValuesAreFilled = ValidationController.areInputsEmpty(sellingAmount, sellingCurrency, buyingCurrency, rate);
-    // const allValuesAreValid = ValidationController.validateNumberTypeInput(postDetails.sellingAmount) && ValidationController.validateNumberTypeInput(postDetails.rate);
+    const allValuesAreFilled = ValidationController.isInputEmpty(buyingAmount);
+    const allValuesAreValid = ValidationController.validateNumberTypeInput(buyingAmount);
 
-    // console.log(allValuesAreValid, allValuesAreFilled)
+    console.log(allValuesAreValid, allValuesAreFilled)
 
-    // if (allValuesAreFilled && allValuesAreValid){
-    //   createPost(postDetails)
-    //   setPostDetails({
-    //     sellingAmount: '',
-    //     sellingCurrency: 'CAD',
-    //     buyingCurrency: 'NGN',
-    //     rate: ''
-    //   })
-    //   postCreated()
-    // } else {
-    //   setErrorMessage('Please input valid values in all fields')
-    // }
+    if (allValuesAreFilled && allValuesAreValid){
+      setBuyingAmount('')
+      closeOnSubmit();
+      setTransactionIntiatedModalShow(true);
+    } else {
+      setErrorMessage('Please input valid values in all fields')
+    }
   }
   
+  const handleOkayBtn = () => {
+    setTransactionIntiatedModalShow(false)
+  }
 
   return (
     <Modal
@@ -57,7 +61,7 @@ const BuySomeModal = ({show, onHide}) => {
       <Modal.Body className="signup-modal-body">
         <Form noValidate onSubmit={(e) => handleSubmit(e)}>
           <Form.Row className="signup-modal-form-row" style={{ alignItems: "center"}}>
-            <div>I have</div>
+            <div>I want</div>
             <Form.Group as={Col} md="5" style={{ margin: "0" }} controlId="validationFormik01">
               {/* <Form.Label>I have this amount</Form.Label> */}
               <Form.Control
@@ -79,9 +83,20 @@ const BuySomeModal = ({show, onHide}) => {
           <div style={{color: 'red'}}>{errorMessage ? `*${errorMessage}` : ''}</div>
           <hr></hr>
           
-          <Button type="submit" variant="danger" className="" style={{ float: "right" }}>Buy</Button>
           
-        </Form>  
+          <div style={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
+            <div style={{ display: 'flex', width: '35%', justifyContent: 'space-between' }}>
+              <Button type="submit" variant="secondary" className="">Cancel</Button>
+              <Button type="submit" variant="danger" className="" style={{ float: "right" }}>Buy</Button>
+            </div>
+          </div>
+          
+        </Form>
+        <TransactionInitializationModal
+          show={transactionIntiatedModalShow}
+          onHide={() => setTransactionIntiatedModalShow(false)}
+          closeOnSubmit={handleOkayBtn}
+        />
       </Modal.Body>
     </Modal>
   );

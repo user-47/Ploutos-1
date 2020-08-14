@@ -4,19 +4,14 @@ import ValidationController from '../../../controllers/ValidationController';
 
 
 
-const BuyAllModal = ({show, onHide, closeOnSubmit}) => {
+const TransactionInitializationModal = ({show, onHide, closeOnSubmit}) => {
 
   const [errorMessage, setErrorMessage] = React.useState('');
 
-  const handleYes = () => {
-    console.log('user clicked yes')
-    closeOnSubmit()
-  };
-
-  const handleNo = () => {
-    console.log('user clicked no');
-    closeOnSubmit()
-  };
+  const handleOkayBtn = () => {
+    console.log('user clicked okay button')
+    closeOnSubmit();
+  }
 
   return (
     <Modal
@@ -33,20 +28,20 @@ const BuyAllModal = ({show, onHide, closeOnSubmit}) => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className="signup-modal-body">
-        <div>
-          Are you sure you want to buy all?
+        <div style={{ display: 'flex', width: '100%', justifyContent: 'center', fontSize: '20px', color: 'green' }}>
+          <b>Transaction Initiatied</b>
+        </div>
+        <div style={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
+          Seller has been notified of your interest
         </div>
         <hr></hr>
-        <div style={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
-          <div style={{ display: 'flex', width: '35%', justifyContent: 'space-between' }}>
-            <Button type="submit" variant="danger" className="" onClick={() => handleNo()}>No</Button>
-            <Button type="submit" variant="success" className="" onClick={() => handleYes()}>Yes</Button>
+        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+            <Button type="submit" variant="success" className="" onClick={() => handleOkayBtn()}>Okay</Button>
           </div>
-        </div>
       </Modal.Body>
     </Modal>
   );
 }
 
 
-export default BuyAllModal;
+export default TransactionInitializationModal;

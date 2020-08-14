@@ -30,6 +30,14 @@ class ValidationController {
     return validator.isEmail(emailInput)
   };
 
+  static isInputEmpty = (input) => {
+    if (validator.isEmpty(input)) {
+      return false;
+    } else {
+      return true;
+    };
+  };
+
   static areSignUpInputsEmpty = (firstName, lastName, email, password, confirmPassword) => {
     if (validator.isEmpty(firstName) ||  validator.isEmpty(lastName) || validator.isEmpty(email) || validator.isEmpty(password) || validator.isEmpty(confirmPassword)) {
       return false;

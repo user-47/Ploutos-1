@@ -14,7 +14,7 @@ const HomePage = ({posts}) => {
   const [activeLink, setActiveLink] = useState("Home");
   const [modalShow, setModalShow] = useState(false);
   
-  const postCreated = () =>{
+  const handleModalClose = () =>{
     setModalShow(false)
   }
 
@@ -81,7 +81,7 @@ const HomePage = ({posts}) => {
           <NewPostModal
             show={modalShow}
             onHide={() => setModalShow(false)}
-            postCreated={postCreated}
+            closeOnSubmit={handleModalClose}
           />
         </div>
       </div>
