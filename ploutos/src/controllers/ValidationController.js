@@ -8,6 +8,7 @@ class ValidationController {
     } else {
       return true;
     };
+    // return (!validator.isEmpty(sellingAmount) ||  !validator.isEmpty(sellingCurrency) || !validator.isEmpty(buyingCurrency) || !validator.isEmpty(rate));
   };
 
   static validateNumberTypeInput = (inputValue) => {
@@ -15,11 +16,9 @@ class ValidationController {
   };
 
   static validateFirstname = (name) => {
-    
     const regex = /^[a-zA-Z,.'-]+$/;
 
     return regex.test(name) && !validator.isEmpty(name);
-
   };
 
   static validateLastname = (name) => {
@@ -27,7 +26,14 @@ class ValidationController {
   };
 
   static validateEmail = (emailInput) => {
-    return validator.isEmail(emailInput)
+    return validator.isEmail(emailInput) && !validator.isEmpty(emailInput);
+  };
+
+  static validatePassword = (password) => {
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$/;
+    // ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$
+
+    return regex.test(password) && !validator.isEmpty(password);
   };
 
   static isInputEmpty = (input) => {
@@ -47,11 +53,12 @@ class ValidationController {
   };
 
   static validateConfirmPassword = (password, confirmPassword) => {
-    if (confirmPassword === password) {
-      return true;
-    } else {
-      return false;
-    };
+    // if (confirmPassword === password && this.validatePassword(confirmPassword)) {
+    //   return true;
+    // } else {
+    //   return false;
+    // };
+    return (confirmPassword === password && this.validatePassword(confirmPassword));
   };
 
   static areLoginInputsEmpty = (email, password) => {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Modal, Button, Form, Col } from "react-bootstrap";
 import ValidationController from '../../../controllers/ValidationController';
+import ErrorMessageController from '../../../controllers/ErrorMessageController';
 import './SignUpModal.styles.css';
 
 
@@ -34,7 +35,7 @@ const SignUpModal = ({closeOnSubmit, ...props}) => {
     const { firstName, lastName, email, password, confirmPassword } = signupDetails;
     
     const allValuesAreFilled = ValidationController.areSignUpInputsEmpty(firstName, lastName, email, password, confirmPassword);
-    const allValuesAreValid = ValidationController.validateFirstname(firstName) && ValidationController.validateLastname(lastName) && ValidationController.validateEmail(email) && ValidationController.validateConfirmPassword(password, confirmPassword);
+    const allValuesAreValid = ValidationController.validateFirstname(firstName) && ValidationController.validateLastname(lastName) && ValidationController.validateEmail(email) && ValidationController.validatePassword(password) && ValidationController.validateConfirmPassword(password, confirmPassword);
 
     console.log(allValuesAreValid, allValuesAreFilled)
 
@@ -78,13 +79,13 @@ const SignUpModal = ({closeOnSubmit, ...props}) => {
                 name="firstName"
                 value={signupDetails.firstName}
                 onChange={handleChange}
-                // isValid={touched.firstName && !errors.firstName}
-                // isInvalid={!!errors.firstName}
+                isValid={ValidationController.validateFirstname(signupDetails.firstName)}
+                isInvalid={(!ValidationController.validateFirstname(signupDetails.firstName))}
               />
-              {/* <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               <Form.Control.Feedback type="invalid">
-                {errors.firstName}
-              </Form.Control.Feedback> */}
+                {ErrorMessageController.nameErrorMessage(signupDetails.firstName, 'Firstname')}
+              </Form.Control.Feedback>
             </Form.Group>
             <Form.Group as={Col} md="6" controlId="validationFormik02">
               <Form.Label>Last name</Form.Label>
@@ -94,14 +95,14 @@ const SignUpModal = ({closeOnSubmit, ...props}) => {
                 name="lastName"
                 value={signupDetails.lastName}
                 onChange={handleChange}
-                // isValid={touched.lastName && !errors.lastName}
-                // isInvalid={!!errors.lastName}
+                isValid={ValidationController.validateLastname(signupDetails.lastName)}
+                isInvalid={(!ValidationController.validateLastname(signupDetails.lastName))}
               />
 
-              {/* <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               <Form.Control.Feedback type="invalid">
-                {errors.lastName}
-              </Form.Control.Feedback> */}
+                {ErrorMessageController.nameErrorMessage(signupDetails.lastName, 'Lastname')}
+              </Form.Control.Feedback>
             </Form.Group>
             
           </Form.Row>
@@ -114,13 +115,13 @@ const SignUpModal = ({closeOnSubmit, ...props}) => {
                 name="email"
                 value={signupDetails.email}
                 onChange={handleChange}
-                // isValid={touched.email && !errors.email}
-                // isInvalid={!!errors.email}
+                isValid={ValidationController.validateEmail(signupDetails.email)}
+                isInvalid={(!ValidationController.validateEmail(signupDetails.email))}
               />
-              {/* <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               <Form.Control.Feedback type="invalid">
-                {errors.email}
-              </Form.Control.Feedback> */}
+                {ErrorMessageController.emailErrorMessage(signupDetails.email)}
+              </Form.Control.Feedback>
             </Form.Group>
           </Form.Row>
           <Form.Row className="signup-modal-form-row">
@@ -132,13 +133,13 @@ const SignUpModal = ({closeOnSubmit, ...props}) => {
                 name="password"
                 value={signupDetails.password}
                 onChange={handleChange}
-                // isValid={touched.password && !errors.password}
-                // isInvalid={!!errors.password}
+                isValid={ValidationController.validatePassword(signupDetails.password)}
+                isInvalid={(!ValidationController.validatePassword(signupDetails.password))}
               />
-              {/* <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               <Form.Control.Feedback type="invalid">
-                {errors.password}
-              </Form.Control.Feedback> */}
+                {ErrorMessageController.passwordErrorMessage(signupDetails.password)}
+              </Form.Control.Feedback>
             </Form.Group>
           </Form.Row>
           <Form.Row className="signup-modal-form-row">
@@ -150,13 +151,13 @@ const SignUpModal = ({closeOnSubmit, ...props}) => {
                 name="confirmPassword"
                 value={signupDetails.confirmPassword}
                 onChange={handleChange}
-                // isValid={touched.confirmPassword && !errors.confirmPassword}
-                // isInvalid={!!errors.confirmPassword}
+                isValid={ValidationController.validateConfirmPassword(signupDetails.password, signupDetails.confirmPassword)}
+                isInvalid={(!ValidationController.validateConfirmPassword(signupDetails.password, signupDetails.confirmPassword))}
               />
-              {/* <Form.Control.Feedback>Looks good!</Form.Control.Feedback> */}
-              {/* <Form.Control.Feedback type="invalid">
-                {errors.confirmPassword}
-              </Form.Control.Feedback> */}
+              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              <Form.Control.Feedback type="invalid">
+                {ErrorMessageController.confirmPasswordErrorMessage(signupDetails.password, signupDetails.confirmPassword)}
+              </Form.Control.Feedback>
             </Form.Group>
           </Form.Row>
           <div style={{color: 'red', marginTop: '10px', marginBottom: '10px'}}>{errorMessage ? `*${errorMessage}` : ''}</div>
