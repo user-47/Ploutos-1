@@ -63,12 +63,9 @@ const HomePage = ({posts}) => {
         </div>
         <div className="post-section">
           {
-            posts.map(({sellingAmount, sellingCurrency, buyingCurrency, rate}, index) => (
+            posts.map((post, index) => (
               <PostContainer
-                sellingAmount={sellingAmount}
-                sellingCurrency={sellingCurrency}
-                buyingCurrency={buyingCurrency}
-                rate={rate}
+                post={post}
                 key={index}
               />
             ))

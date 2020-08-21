@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import { deletePost } from '../../redux/post/post.actions';
 import BuySomeModal from '../Modal/BuySomeModal/BuySomeModal.comp';
 import BuyAllModal from '../Modal/BuyAllModal/BuyAllModal.comp';
 import TransactionInitializationModal from '../Modal/TransactionInitializationModal/TransactionInitialization.comp';
 import './PostContainer.style.css';
 
-const PostContainer = ({userName, sellingAmount, sellingCurrency, buyingCurrency, rate}) => {
+const PostContainer = ({userName, post, removePost}) => {
 
+  const {sellingAmount, sellingCurrency, buyingCurrency, rate} = post
   const [buySomeModalShow, setBuySomeModalShow] = useState(false);
   const [buyAllModalShow, setBuyAllModalShow] = useState(false);
   const [transactionIntiatedModalShow, setTransactionIntiatedModalShow] = React.useState(false);
@@ -36,8 +39,12 @@ const PostContainer = ({userName, sellingAmount, sellingCurrency, buyingCurrency
     <div className="post-container">
       <Card>
         <Card.Header className="post-card-header">
-          <div className="post-card-avatar"></div>
-          <div className="ml-4">User Name</div>
+          <div className="post-card-avatar-area">
+            <div className="post-card-avatar"></div>
+            <div className="ml-4">User Name</div>
+          </div>
+          <div className="delete-post" onClick={() => removePost(post)}>&times;</div>
+          
         </Card.Header>
         <Card.Body>
           <Card.Title><b>CAD for NAIRA</b></Card.Title>
@@ -74,4 +81,8 @@ const PostContainer = ({userName, sellingAmount, sellingCurrency, buyingCurrency
   )
 };
 
-export default PostContainer;
+const mapDispatchToProps = dispatch => ({
+  removePost: postDetail => dispatch(deletePost(postDetail))
+});
+
+export default connect(null, mapDispatchToProps)(PostContainer);

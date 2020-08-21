@@ -1,14 +1,10 @@
 import { postActionTypes } from './post.types';
-import { createNewPost } from './post.utils';
+import { createNewPost, deletePost } from './post.utils';
 
 
 const INITIAL_STATE = {
   isFavorite: false,
   postDetailsCollection: [],
-  // buyingCurrency: 'NGN',
-  // selling: null,
-  // sellingCurrency: 'CAD',
-  // rate: 290,
 }
 
 const postReducer = (state = INITIAL_STATE, action) => {
@@ -17,6 +13,11 @@ const postReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         postDetailsCollection: createNewPost(state.postDetailsCollection, action.payload)
+      }
+    case postActionTypes.DELETE_POST:
+      return {
+        ...state,
+        postDetailsCollection: deletePost(state.postDetailsCollection, action.payload)
       }
     default:
       return state;

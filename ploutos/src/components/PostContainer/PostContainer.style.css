@@ -7,6 +7,12 @@
 .post-card-header{
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.post-card-avatar-area{
+  display: flex;
+  align-items: center;
 }
 
 .post-card-avatar{
@@ -14,6 +20,11 @@
   height: 50px;
   border-radius: 50%;
   background-color: pink;
+}
+
+.delete-post{
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .post-card-footer{

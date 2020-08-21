@@ -12,7 +12,7 @@ class ValidationController {
   };
 
   static validateNumberTypeInput = (inputValue) => {
-    return validator.isNumeric(inputValue) && validator.isInt(inputValue);
+    return validator.isNumeric(inputValue) && validator.isInt(inputValue, {gt: 0});
   };
 
   static validateFirstname = (name) => {
