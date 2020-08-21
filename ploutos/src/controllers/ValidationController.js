@@ -30,8 +30,9 @@ class ValidationController {
   };
 
   static validatePassword = (password) => {
-    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$/;
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&-£/_.,:;<>~#{}"'^=+{}`¬])[A-Za-z\d@$!%*?&-£/_.,:;<>~#{}"'^=+{}`¬]{8}$/;
     // ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$
+    // ^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]).{8,32}$
 
     return regex.test(password) && !validator.isEmpty(password);
   };

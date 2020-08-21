@@ -24,6 +24,14 @@ class ErrorMessageController {
     } else if (ValidationController.validatePassword(password) == false) {
       return `Password doesn't match required format`
     }
+    // At least one digit [0-9]
+    // At least one lowercase character [a-z]
+    // At least one uppercase character [A-Z]
+    // At least one special character [*.!@#$%^&(){}[]:;<>,.?/~_+-=|\]
+    // At least 8 characters in length, but no more than 32.
+    // const passwordErrorArray = ['At least one digit', 'At least one lowercase character', 'At least one uppercase character', 'At least 8 characters in length, but no more than 64'];
+    
+
   };
 
   static confirmPasswordErrorMessage = (password, confirmPassword) => {

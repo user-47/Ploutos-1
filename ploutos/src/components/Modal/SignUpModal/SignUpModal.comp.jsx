@@ -2,6 +2,7 @@ import React from 'react';
 import { Modal, Button, Form, Col } from "react-bootstrap";
 import ValidationController from '../../../controllers/ValidationController';
 import ErrorMessageController from '../../../controllers/ErrorMessageController';
+// import { Formik } from 'formik';
 import './SignUpModal.styles.css';
 
 
@@ -14,7 +15,7 @@ const SignUpModal = ({closeOnSubmit, ...props}) => {
     password: '',
     confirmPassword: ''
   });
-
+  const passwordErrorArray = ['At least one digit', 'At least one lowercase character', 'At least one uppercase character', 'At least 8 characters in length'];
   const [errorMessage, setErrorMessage] = React.useState('');
 
   const handleChange = (e) => {
@@ -80,11 +81,11 @@ const SignUpModal = ({closeOnSubmit, ...props}) => {
                 value={signupDetails.firstName}
                 onChange={handleChange}
                 isValid={ValidationController.validateFirstname(signupDetails.firstName)}
-                isInvalid={(!ValidationController.validateFirstname(signupDetails.firstName))}
+                isInvalid={!ValidationController.validateFirstname(signupDetails.firstName)}
               />
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              <Form.Control.Feedback></Form.Control.Feedback>
               <Form.Control.Feedback type="invalid">
-                {ErrorMessageController.nameErrorMessage(signupDetails.firstName, 'Firstname')}
+                {/* {ErrorMessageController.nameErrorMessage(signupDetails.firstName, 'Firstname')} */}
               </Form.Control.Feedback>
             </Form.Group>
             <Form.Group as={Col} md="6" controlId="validationFormik02">
@@ -96,12 +97,12 @@ const SignUpModal = ({closeOnSubmit, ...props}) => {
                 value={signupDetails.lastName}
                 onChange={handleChange}
                 isValid={ValidationController.validateLastname(signupDetails.lastName)}
-                isInvalid={(!ValidationController.validateLastname(signupDetails.lastName))}
+                isInvalid={!ValidationController.validateLastname(signupDetails.lastName)}
               />
 
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              <Form.Control.Feedback></Form.Control.Feedback>
               <Form.Control.Feedback type="invalid">
-                {ErrorMessageController.nameErrorMessage(signupDetails.lastName, 'Lastname')}
+                {/* {ErrorMessageController.nameErrorMessage(signupDetails.lastName, 'Lastname')} */}
               </Form.Control.Feedback>
             </Form.Group>
             
@@ -116,11 +117,11 @@ const SignUpModal = ({closeOnSubmit, ...props}) => {
                 value={signupDetails.email}
                 onChange={handleChange}
                 isValid={ValidationController.validateEmail(signupDetails.email)}
-                isInvalid={(!ValidationController.validateEmail(signupDetails.email))}
+                isInvalid={!ValidationController.validateEmail(signupDetails.email)}
               />
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              <Form.Control.Feedback></Form.Control.Feedback>
               <Form.Control.Feedback type="invalid">
-                {ErrorMessageController.emailErrorMessage(signupDetails.email)}
+                {/* {ErrorMessageController.emailErrorMessage(signupDetails.email)} */}
               </Form.Control.Feedback>
             </Form.Group>
           </Form.Row>
@@ -136,9 +137,9 @@ const SignUpModal = ({closeOnSubmit, ...props}) => {
                 isValid={ValidationController.validatePassword(signupDetails.password)}
                 isInvalid={(!ValidationController.validatePassword(signupDetails.password))}
               />
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              <Form.Control.Feedback></Form.Control.Feedback>
               <Form.Control.Feedback type="invalid">
-                {ErrorMessageController.passwordErrorMessage(signupDetails.password)}
+                {/* {ErrorMessageController.passwordErrorMessage(signupDetails.password)} */}
               </Form.Control.Feedback>
             </Form.Group>
           </Form.Row>
@@ -154,16 +155,31 @@ const SignUpModal = ({closeOnSubmit, ...props}) => {
                 isValid={ValidationController.validateConfirmPassword(signupDetails.password, signupDetails.confirmPassword)}
                 isInvalid={(!ValidationController.validateConfirmPassword(signupDetails.password, signupDetails.confirmPassword))}
               />
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              <Form.Control.Feedback></Form.Control.Feedback>
               <Form.Control.Feedback type="invalid">
-                {ErrorMessageController.confirmPasswordErrorMessage(signupDetails.password, signupDetails.confirmPassword)}
+                {/* {ErrorMessageController.confirmPasswordErrorMessage(signupDetails.password, signupDetails.confirmPassword)} */}
               </Form.Control.Feedback>
             </Form.Group>
           </Form.Row>
           <div style={{color: 'red', marginTop: '10px', marginBottom: '10px'}}>{errorMessage ? `*${errorMessage}` : ''}</div>
           <Button type="submit" variant="danger" className="signup-btn">Sign Up</Button>
+          <div style={{marginTop: '10px', marginBottom: '10px'}}>
+            <p>By clicking <em>Sign Up</em> you agree to our 
+              <a href="/"> terms of service</a>
+            </p>
+          </div>
+
+          <div style={{ marginTop: '2%', padding: '11px', lineHeight: '1.2', backgroundColor: 'cornsilk'}}>
+            <p>Password must have : </p>
+            {
+              passwordErrorArray.map((error) => (
+                <p>{error}</p>
+              ))
+            }
+            
+          </div>
         </Form>
-        
+      
         {/* <div className="signup-with-text">or sign up with:</div>
         <div className="signup-options-container">
           <div className="signup-options">
@@ -171,11 +187,7 @@ const SignUpModal = ({closeOnSubmit, ...props}) => {
             <img src="../../assets/icons/google-icon.svg" alt="google icon" />
           </div>
         </div> */}
-        <div style={{marginTop: '10px', marginBottom: '10px'}}>
-            <p>By clicking <em>Sign Up</em> you agree to our 
-              <a href="/"> terms of service</a>
-            </p>
-          </div>
+        
       </Modal.Body>
     </Modal>
   );
