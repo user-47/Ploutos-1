@@ -15,6 +15,10 @@ class ValidationController {
     return validator.isNumeric(inputValue) && validator.isInt(inputValue, {gt: 0});
   };
 
+  static validateBuySomeInput = (inputValue, maxAllowedValue) => {
+    return this.validateNumberTypeInput(inputValue) && (Number(inputValue) <= Number(maxAllowedValue))
+  }
+
   static validateFirstname = (name) => {
     const regex = /^[a-zA-Z,.'-]+$/;
 

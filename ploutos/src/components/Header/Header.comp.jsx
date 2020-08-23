@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import './Header.styles.css';
 import { Link } from 'react-router-dom'
 import { Navbar, Form, Button, Col } from "react-bootstrap";
-import * as Yup from 'yup';
-import { Formik } from 'formik';
+// import * as Yup from 'yup';
+// import { Formik } from 'formik';
 import ValidationController from '../../controllers/ValidationController';
 
 
-const schema = Yup.object({
-  email: Yup.string().required(),
-  password: Yup.string().required(),
-});
+// const schema = Yup.object({
+//   email: Yup.string().required(),
+//   password: Yup.string().required(),
+// });
 
 const Header = () => {
 

@@ -1,17 +1,15 @@
 import React from 'react';
 import { Modal, Button, Form, Col } from "react-bootstrap";
 import ValidationController from '../../../controllers/ValidationController';
-import TransactionInitializationModal from '../TransactionInitializationModal/TransactionInitialization.comp';
+// import TransactionInitializationModal from '../TransactionInitializationModal/TransactionInitialization.comp';
 
 
 
-const BuySomeModal = ({show, onHide, closeOnSubmit, closeWithCancelBtn}) => {
+const BuySomeModal = ({show, onHide, closeOnSubmit, closeWithCancelBtn, maxAmountAllowed}) => {
 
   const [buyingAmount, setBuyingAmount] = React.useState('');
 
   const [errorMessage, setErrorMessage] = React.useState('');
-
-  const [transactionIntiatedModalShow, setTransactionIntiatedModalShow] = React.useState(false);
 
   const handleChange = (e) => {
     const { value } = e.target;
@@ -27,7 +25,7 @@ const BuySomeModal = ({show, onHide, closeOnSubmit, closeWithCancelBtn}) => {
     console.log(buyingAmount)
     
     const allValuesAreFilled = ValidationController.isInputEmpty(buyingAmount);
-    const allValuesAreValid = ValidationController.validateNumberTypeInput(buyingAmount);
+    const allValuesAreValid = ValidationController.validateBuySomeInput(buyingAmount, maxAmountAllowed);
 
     console.log(allValuesAreValid, allValuesAreFilled)
 
@@ -71,12 +69,11 @@ const BuySomeModal = ({show, onHide, closeOnSubmit, closeWithCancelBtn}) => {
                 name="buyingAmount"
                 value={buyingAmount}
                 onChange={handleChange}
-                // isValid={touched.sellingAmount && !errors.sellingAmount}
-                // isInvalid={ValidationController.validateNumberTypeInput(postDetails.sellingAmount)}
+                isValid={ValidationController.validateBuySomeInput(buyingAmount, maxAmountAllowed)}
+                isInvalid={!ValidationController.validateBuySomeInput(buyingAmount, maxAmountAllowed)}
               />
-              {/* <Form.Control.Feedback>Looks good!</Form.Control.Feedback> */}
+              <Form.Control.Feedback></Form.Control.Feedback>
               <Form.Control.Feedback type="invalid">
-                Invalid Input
               </Form.Control.Feedback>
             </Form.Group>
             

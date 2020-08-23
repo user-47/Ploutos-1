@@ -62,6 +62,7 @@ const PostContainer = ({userName, post, removePost}) => {
             onHide={() => setBuySomeModalShow(false)}
             closeOnSubmit={handleBuySomeModalClose}
             closeWithCancelBtn={handleCloseOnCancel}
+            maxAmountAllowed={sellingAmount}
           />
           <BuyAllModal
             show={buyAllModalShow}

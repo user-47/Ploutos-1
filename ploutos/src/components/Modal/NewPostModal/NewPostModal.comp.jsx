@@ -15,7 +15,7 @@ const NewPostModal = ({createPost, show, onHide, closeOnSubmit}) => {
     rate: ''
   });
 
-  const currencyOptions = ['CAD', 'NGN'];
+  // const currencyOptions = ['CAD', 'NGN'];
 
   const [errorMessage, setErrorMessage] = React.useState('');
 

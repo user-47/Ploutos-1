@@ -5,7 +5,7 @@ class ErrorMessageController {
   static nameErrorMessage = (name, type='first name') => {
     if (validator.isEmpty(name)) {
       return `Please fill in your ${type}`
-    } else if (ValidationController.validateFirstname(name) == false) {
+    } else if (ValidationController.validateFirstname(name) === false) {
       return `Please fill in valid ${type}`
     }
   };
@@ -13,7 +13,7 @@ class ErrorMessageController {
   static emailErrorMessage = (email) => {
     if (validator.isEmpty(email)) {
       return `Please fill in your email address`
-    } else if (ValidationController.validateEmail(email) == false) {
+    } else if (ValidationController.validateEmail(email) === false) {
       return `Please fill in valid email address`
     }
   };
@@ -21,7 +21,7 @@ class ErrorMessageController {
   static passwordErrorMessage = (password) => {
     if (validator.isEmpty(password)) {
       return `Please fill in your password`
-    } else if (ValidationController.validatePassword(password) == false) {
+    } else if (ValidationController.validatePassword(password) === false) {
       return `Password doesn't match required format`
     }
     // At least one digit [0-9]
@@ -37,7 +37,7 @@ class ErrorMessageController {
   static confirmPasswordErrorMessage = (password, confirmPassword) => {
     if (validator.isEmpty(confirmPassword)) {
       return `Please fill in your password again`
-    } else if (ValidationController.validateConfirmPassword(password, confirmPassword) == false) {
+    } else if (ValidationController.validateConfirmPassword(password, confirmPassword) === false) {
       return `Does not match password`
     }
   };

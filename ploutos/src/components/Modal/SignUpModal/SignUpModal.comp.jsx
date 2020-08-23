@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal, Button, Form, Col } from "react-bootstrap";
 import ValidationController from '../../../controllers/ValidationController';
-import ErrorMessageController from '../../../controllers/ErrorMessageController';
+// import ErrorMessageController from '../../../controllers/ErrorMessageController';
 // import { Formik } from 'formik';
 import './SignUpModal.styles.css';
 

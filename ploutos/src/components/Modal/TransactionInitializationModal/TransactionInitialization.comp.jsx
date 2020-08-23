@@ -1,12 +1,12 @@
 import React from 'react';
-import { Modal, Button, Form, Col } from "react-bootstrap";
-import ValidationController from '../../../controllers/ValidationController';
+import { Modal, Button} from "react-bootstrap";
+// import ValidationController from '../../../controllers/ValidationController';
 
 
 
 const TransactionInitializationModal = ({show, onHide, closeOnSubmit}) => {
 
-  const [errorMessage, setErrorMessage] = React.useState('');
+  // const [errorMessage, setErrorMessage] = React.useState('');
 
   const handleOkayBtn = () => {
     console.log('user clicked okay button')
