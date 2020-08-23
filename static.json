@@ -1,0 +1,6 @@
+{
+  "root": "ploutos/build/",
+  "routes": {
+    "/**": "index.html"
+  }
+}
