@@ -1,0 +1,15 @@
+{
+    "name": "ploutos",
+    "version": "0.1.0",
+    "private": true,
+    "engines": {
+        "node": "12.x",
+        "yarn": "1.x"
+    },
+    "scripts": {
+        "postinstall": "yarn --cwd ploutos install",
+        "build": "yarn --cwd ploutos build",
+        "start": "yarn --cwd ploutos start"
+    }
+  }
+  
