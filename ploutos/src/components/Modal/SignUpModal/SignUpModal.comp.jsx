@@ -1,6 +1,7 @@
 import React from 'react';
 import { Modal, Button, Form, Col } from "react-bootstrap";
 import ValidationController from '../../../controllers/ValidationController';
+import { useHistory } from "react-router-dom";
 // import ErrorMessageController from '../../../controllers/ErrorMessageController';
 // import { Formik } from 'formik';
 import './SignUpModal.styles.css';
@@ -17,6 +18,8 @@ const SignUpModal = ({closeOnSubmit, ...props}) => {
   });
   const passwordErrorArray = ['At least one digit', 'At least one lowercase character', 'At least one uppercase character', 'At least 8 characters in length'];
   const [errorMessage, setErrorMessage] = React.useState('');
+
+  let history = useHistory();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -49,7 +52,8 @@ const SignUpModal = ({closeOnSubmit, ...props}) => {
         password: '',
         confirmPassword: ''
       });
-      closeOnSubmit()
+      closeOnSubmit();
+      history.push('/signupAuth')
       console.log('sign up successful')
     } else {
       setErrorMessage('Please fill in all fields correctly')
@@ -172,8 +176,8 @@ const SignUpModal = ({closeOnSubmit, ...props}) => {
           <div style={{ marginTop: '2%', padding: '11px', lineHeight: '1.2', backgroundColor: 'cornsilk'}}>
             <p>Password must have : </p>
             {
-              passwordErrorArray.map((error) => (
-                <p>{error}</p>
+              passwordErrorArray.map((error, index) => (
+                <p key={index}>{error}</p>
               ))
             }
             
