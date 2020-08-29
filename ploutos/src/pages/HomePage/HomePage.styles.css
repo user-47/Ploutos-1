@@ -1,6 +1,7 @@
 .homepage-body{
   display: flex;
   justify-content: center;
+  flex-direction: column;
   background-color: #1b1b2e;
   height: 100%;
 }

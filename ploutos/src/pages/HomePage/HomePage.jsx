@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import NewPostModal from '../../components/Modal/NewPostModal/NewPostModal.comp';
-import PostContainer from '../../components/PostContainer/PostContainer.comp'
+import PostContainer from '../../components/PostContainer/PostContainer.comp';
+import RangeInput from '../../components/RangeInput/RangeInput.comp';
 import './HomePage.styles.css';
 import { createStructuredSelector } from 'reselect';
 import { selectPostDetails } from '../../redux/post/post.selectors';
@@ -46,6 +47,18 @@ const HomePage = ({posts}) => {
 
   return(
     <div className="homepage-body">
+      <div 
+        style={{
+          // color: 'red',
+          display: 'flex',
+          justifyContent: 'center',
+          backgroundColor: 'white',
+          width: 'auto',
+          height: 'auto',
+        }}
+      >
+        <RangeInput />
+      </div>
       <div className="homepage-container">
         <div className="sidebar-container">
           <div className="sidebar">
