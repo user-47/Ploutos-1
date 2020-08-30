@@ -14,10 +14,58 @@ const HomePage = ({posts}) => {
   const sideBarLinks = ["Home", "Search", "Saved", "Messages", "My Profile", "Settings"];
   const [activeLink, setActiveLink] = useState("Home");
   const [modalShow, setModalShow] = useState(false);
+  const minMaxValue = [100, 500]
+  const [value, setValue] = React.useState([minMaxValue[0], minMaxValue[1]]);
+  
+  const [filter, setFilter] = React.useState('All');
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  const handleInputChange = (event) => {
+    switch (event.target.name) {
+      case 'min':
+        setValue(event.target.value === '' ? ['', value[1]] : [Number(event.target.value), value[1]]);
+        break;
+      case 'max':
+        setValue(event.target.value === '' ? [value[0], ''] : [value[0], Number(event.target.value)]);
+        break;
+      
+      default:
+        setValue(event.target.value === '' ? [value[0], value[1]] : Number(event.target.value));
+        break;
+    }
+    
+  };
+
+  const handleBlur = (event) => {
+    switch (event.target.name) {
+      case 'min':
+        if (event.target.value < minMaxValue[0]) {
+          setValue([minMaxValue[0], value[1]]);
+        } 
+        break;
+      case 'max':
+        if (event.target.value > minMaxValue[1]) {
+          setValue([value[0], minMaxValue[1]]);
+        } 
+        break;
+    
+      default:
+        setValue([value[0], value[1]]);
+        break;
+    }
+  };
+
+  const handleFilterChange = (event) => {
+    setFilter(event.target.value);
+    console.log(filter)
+  };
   
   const handleModalClose = () =>{
     setModalShow(false)
-  }
+  };
 
   const switchActiveTab = (indexValue) => {
     switch (indexValue) {
@@ -43,7 +91,26 @@ const HomePage = ({posts}) => {
         setActiveLink("Home")
         break;
     }
+  };
+
+  const onFilterChange = () => {
+    switch (filter) {
+      case 'All':
+        return posts.filter(post => 
+          post.rate >= value[0] && post.rate <= value[1]
+        );
+        break;
+    
+      default:
+        const filteredPosts = posts.filter(post => 
+          post.sellingCurrency.toLowerCase() === filter.toLowerCase() && 
+          (post.rate >= value[0] && post.rate <= value[1])
+        );
+        return filteredPosts;
+        break;
+    }
   }
+  
 
   return(
     <div className="homepage-body">
@@ -57,7 +124,15 @@ const HomePage = ({posts}) => {
           height: 'auto',
         }}
       >
-        <RangeInput />
+        <RangeInput
+          minMaxValue={minMaxValue}
+          value={value}
+          filter={filter}
+          handleChange={handleChange}
+          handleBlur={handleBlur}
+          handleFilterChange={handleFilterChange}
+          handleInputChange={handleInputChange}
+        />
       </div>
       <div className="homepage-container">
         <div className="sidebar-container">
@@ -76,7 +151,7 @@ const HomePage = ({posts}) => {
         </div>
         <div className="post-section">
           {
-            posts.map((post, index) => (
+            onFilterChange().map((post, index) => (
               <PostContainer
                 post={post}
                 key={index}

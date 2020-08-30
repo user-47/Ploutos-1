@@ -2,12 +2,10 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Slider from '@material-ui/core/Slider';
 import Grid from '@material-ui/core/Grid';
-import Input from '@material-ui/core/Input';
 import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles((theme) => ({
@@ -25,73 +23,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const valuetext = (value) => {
-  return `${value}°C`;
-}
-
-const RangeSlider = () => {
+const RangeSlider = ({
+  minMaxValue,
+  value,
+  filter,
+  handleChange,
+  handleBlur,
+  handleFilterChange,
+  handleInputChange,
+}) => {
   const classes = useStyles();
-  const minMaxValue = [100, 500]
-  const [value, setValue] = React.useState([minMaxValue[0], minMaxValue[1]]);
   
-  const [filter, setFilter] = React.useState('All');
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  const handleInputChange = (event) => {
-    // const {name} = event.target
-    console.log(event.target.value)
-    // if (event.target.name == 'min') {
-    //   setValue(event.target.value === '' ? '' : [Number(event.target.value), value[1]]);
-    // } else if (event.target.name == 'max') {
-    //   setValue(event.target.value === '' ? '' : [value[0], Number(event.target.value)]);
-    // }
-    switch (event.target.name) {
-      case 'min':
-        setValue(event.target.value === '' ? ['', value[1]] : [Number(event.target.value), value[1]]);
-        break;
-      case 'max':
-        setValue(event.target.value === '' ? [value[0], ''] : [value[0], Number(event.target.value)]);
-        break;
-      
-      default:
-        setValue(event.target.value === '' ? [value[0], value[1]] : Number(event.target.value));
-        break;
-    }
-    
-  };
-
-  const handleBlur = (event) => {
-    // if (value < minMaxValue[0]) {
-    //   setValue([minMaxValue[0]]);
-    // } else if (value > minMaxValue[1]) {
-    //   setValue(minMaxValue[1]);
-    // }
-    
-    switch (event.target.name) {
-      case 'min':
-        if (event.target.value < minMaxValue[0]) {
-          setValue([minMaxValue[0], value[1]]);
-        } 
-        break;
-      case 'max':
-        if (event.target.value > minMaxValue[1]) {
-          setValue([value[0], minMaxValue[1]]);
-        } 
-        break;
-    
-      default:
-        setValue([value[0], value[1]]);
-        break;
-    }
-  };
-
-  const handleFilterChange = (event) => {
-    setFilter(event.target.value);
-  };
-
   return (
     <div style={{ display: 'flex', alignItems: 'center', width: '50%', justifyContent: 'space-between', margin:'1.2%'}}>
       <div>
@@ -120,7 +62,7 @@ const RangeSlider = () => {
               onChange={handleChange}
               valueLabelDisplay="auto"
               aria-labelledby="range-slider"
-              getAriaValueText={valuetext}
+              // getAriaValueText={valuetext}
               min={minMaxValue[0]}
               max={minMaxValue[1]}
             />
@@ -138,7 +80,7 @@ const RangeSlider = () => {
                 shrink: true,
               }}
               inputProps={{
-                step: 10,
+                step: 1,
                 min: minMaxValue[0],
                 max: minMaxValue[1],
                 type: 'number',
@@ -160,7 +102,7 @@ const RangeSlider = () => {
                 shrink: true,
               }}
               inputProps={{
-                step: 10,
+                step: 1,
                 min: minMaxValue[0],
                 max: minMaxValue[1],
                 type: 'number',

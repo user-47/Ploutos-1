@@ -47,7 +47,7 @@ const PostContainer = ({userName, post, removePost}) => {
           
         </Card.Header>
         <Card.Body>
-          <Card.Title><b>CAD for NAIRA</b></Card.Title>
+          <Card.Title><b>{sellingCurrency} for {buyingCurrency}</b></Card.Title>
           <Card.Text>
             I have <b>{sellingAmount} {sellingCurrency}</b> for sale, looking to exchange for <b>{buyingCurrency}</b> at the rate of <b>{rate}</b> per Dollar
           </Card.Text>
