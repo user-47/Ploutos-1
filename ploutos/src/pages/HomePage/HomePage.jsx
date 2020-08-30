@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import NewPostModal from '../../components/Modal/NewPostModal/NewPostModal.comp';
 import PostContainer from '../../components/PostContainer/PostContainer.comp';
-import RangeInput from '../../components/RangeInput/RangeInput.comp';
+import RangeSlider from '../../components/RangeInput/RangeInput.comp';
 import './HomePage.styles.css';
 import { createStructuredSelector } from 'reselect';
 import { selectPostDetails } from '../../redux/post/post.selectors';
@@ -98,7 +98,7 @@ const HomePage = ({posts}) => {
         return posts.filter(post => 
           post.rate >= value[0] && post.rate <= value[1]
         );
-        break;
+        // break;
     
       default:
         const filteredPosts = posts.filter(post => 
@@ -106,7 +106,7 @@ const HomePage = ({posts}) => {
           (post.rate >= value[0] && post.rate <= value[1])
         );
         return filteredPosts;
-        break;
+        // break;
     }
   }
   
@@ -123,7 +123,7 @@ const HomePage = ({posts}) => {
           height: 'auto',
         }}
       >
-        <RangeInput
+        <RangeSlider
           minMaxValue={minMaxValue}
           value={value}
           filter={filter}
