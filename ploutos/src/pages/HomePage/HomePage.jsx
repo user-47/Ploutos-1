@@ -60,7 +60,6 @@ const HomePage = ({posts}) => {
 
   const handleFilterChange = (event) => {
     setFilter(event.target.value);
-    console.log(filter)
   };
   
   const handleModalClose = () =>{
