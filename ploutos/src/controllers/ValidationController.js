@@ -19,14 +19,24 @@ class ValidationController {
     return this.validateNumberTypeInput(inputValue) && (Number(inputValue) <= Number(maxAllowedValue))
   }
 
-  static validateFirstname = (name) => {
+  static validateFirstname = (firstname) => {
     const regex = /^[a-zA-Z,.'-]+$/;
 
-    return regex.test(name) && !validator.isEmpty(name);
+    return regex.test(firstname) && !validator.isEmpty(firstname);
   };
 
-  static validateLastname = (name) => {
-    return this.validateFirstname(name);
+  static validateLastname = (lastname) => {
+    return this.validateFirstname(lastname);
+  };
+
+  static validateUsername = (username) => {
+    const regex = /^[a-zA-Z@$!%*?&-£/_.,:;<>~#{}"'^=+{}`¬]+$/;
+    
+    return regex.test(username) && !validator.isEmpty(username);
+  };
+
+  static validatePhoneNo = (phoneNo) => {
+    return validator.isNumeric(phoneNo) && validator.isMobilePhone(phoneNo) && !validator.isEmpty(phoneNo) && (phoneNo.length >= 10 && phoneNo.length <= 13);
   };
 
   static validateEmail = (emailInput) => {
@@ -34,7 +44,7 @@ class ValidationController {
   };
 
   static validatePassword = (password) => {
-    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&-£/_.,:;<>~#{}"'^=+{}`¬])[A-Za-z\d@$!%*?&-£/_.,:;<>~#{}"'^=+{}`¬]{8}$/;
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&-£/_.,:;<>~#{}"'^=+{}`¬])[A-Za-z\d@$!%*?&-£/_.,:;<>~#{}"'^=+{}`¬]{8,64}$/;
     // ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$
     // ^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]).{8,32}$
 

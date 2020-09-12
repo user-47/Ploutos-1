@@ -7,12 +7,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { SnackbarProvider } from 'notistack';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate persistor={persistor}>
-        <App />
+        <SnackbarProvider maxSnack={5}>
+          <App />
+        </SnackbarProvider>
       </PersistGate>
     </Provider>
   </React.StrictMode>,

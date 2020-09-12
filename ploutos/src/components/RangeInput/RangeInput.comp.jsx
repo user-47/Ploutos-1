@@ -35,8 +35,8 @@ const RangeSlider = ({
   const classes = useStyles();
   
   return (
-    <div style={{ display: 'flex', alignItems: 'center', width: '50%', justifyContent: 'space-between', margin:'1.2%'}}>
-      <div>
+    <div style={{ display: 'flex', alignItems: 'center', width: '100%', justifyContent: 'space-between', margin:'1.2%', marginTop: '8%'}}>
+      {/* <div>
         <FormControl variant="outlined" className={classes.formControl}>
           <InputLabel id="demo-simple-select-outlined-label">Filter</InputLabel>
           <Select
@@ -51,22 +51,11 @@ const RangeSlider = ({
             <MenuItem value={'NGN'}>NGN</MenuItem>
           </Select>
         </FormControl>
-      </div>
+      </div> */}
       
       <div className={classes.root}>
-        <div style={{marginRight: '3%'}}>Rate: </div>
-        <Grid container spacing={4} alignItems="center">
-          <Grid item xs>
-            <Slider
-              value={value}
-              onChange={handleChange}
-              valueLabelDisplay="auto"
-              aria-labelledby="range-slider"
-              // getAriaValueText={valuetext}
-              min={minMaxValue[0]}
-              max={minMaxValue[1]}
-            />
-          </Grid>
+        {/* <div style={{marginRight: '3%'}}>Rate: </div> */}
+        <Grid container spacing={2} alignItems="center">
           <Grid item>
             <TextField
               id="outlined-number"
@@ -89,7 +78,18 @@ const RangeSlider = ({
               variant="outlined"
             />
           </Grid>
-          <Grid item>
+          <Grid item xs>
+            <Slider
+              value={value}
+              onChange={handleChange}
+              valueLabelDisplay="auto"
+              aria-labelledby="range-slider"
+              // getAriaValueText={valuetext}
+              min={minMaxValue[0]}
+              max={minMaxValue[1]}
+            />
+          </Grid>
+          <Grid item style={{ marginRight: '2%'}}>
             <TextField
               id="outlined-number"
               label="max"
@@ -114,6 +114,7 @@ const RangeSlider = ({
         </Grid>
         
       </div>
+    
     </div>
   );
 };

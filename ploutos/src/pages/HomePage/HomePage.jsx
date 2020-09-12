@@ -6,13 +6,68 @@ import RangeSlider from '../../components/RangeInput/RangeInput.comp';
 import './HomePage.styles.css';
 import { createStructuredSelector } from 'reselect';
 import { selectPostDetails } from '../../redux/post/post.selectors';
+import HomeIcon from '@material-ui/icons/Home';
+import SearchIcon from '@material-ui/icons/Search';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import EmailIcon from '@material-ui/icons/Email';
+import SettingsIcon from '@material-ui/icons/Settings';
+import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+// import Slider from '@material-ui/core/Slider';
+// import Grid from '@material-ui/core/Grid';
+// import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: 500,
+    display: 'flex',
+    alignItems: 'center'
+  },
+  formControl: {
+    // margin: theme.spacing(1),
+    minWidth: 80,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
+}));
+
 const HomePage = ({posts}) => {
 
-  const sideBarLinks = ["Home", "Search", "Saved", "Messages", "My Profile", "Settings"];
+  const sideBarLinks = [
+    {
+      linkText: "Home",
+      icon: <HomeIcon style={{ fontSize: 25}} className="mr-4"/>
+    }, 
+    {
+      linkText: "Filter",
+      icon: <SearchIcon style={{ fontSize: 25}} className="mr-4"/>
+    }, 
+    {
+      linkText: "Saved",
+      icon: <FavoriteIcon style={{ fontSize: 25}} className="mr-4"/>
+    }, 
+    {
+      linkText: "Messages",
+      icon: <EmailIcon style={{ fontSize: 25}} className="mr-4"/>
+    }, 
+    // {
+    //   linkText: "My Profile",
+    //   icon: <HomeIcon style={{ fontSize: 25}} className="mr-4"/>
+    // }, 
+    {
+      linkText: "Settings",
+      icon: <SettingsIcon style={{ fontSize: 25}} className="mr-4"/>
+    }
+  ];
   const [activeLink, setActiveLink] = useState("Home");
+  const [openFilter, setOpenFilter] = useState(false);
   const [modalShow, setModalShow] = useState(false);
   const minMaxValue = [100, 500]
   const [value, setValue] = React.useState([minMaxValue[0], minMaxValue[1]]);
@@ -22,6 +77,8 @@ const HomePage = ({posts}) => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  const classes = useStyles();
 
   const handleInputChange = (event) => {
     switch (event.target.name) {
@@ -70,24 +127,31 @@ const HomePage = ({posts}) => {
     switch (indexValue) {
       case 0:
         setActiveLink("Home")
+        setOpenFilter(false);
         break;
       case 1:
-        setActiveLink("Search")
+        setActiveLink("Filter");
+        setOpenFilter(true);
         break;
       case 2:
         setActiveLink("Saved")
+        setOpenFilter(false);
         break;
       case 3:
         setActiveLink("Messages")
+        setOpenFilter(false);
         break;
+      // case 4:
+      //   setActiveLink("My Profile")
+      //   setOpenFilter(false);
+      //   break;
       case 4:
-        setActiveLink("My Profile")
-        break;
-      case 5:
         setActiveLink("Settings")
+        setOpenFilter(false);
         break;
       default:
         setActiveLink("Home")
+        setOpenFilter(false);
         break;
     }
   };
@@ -113,7 +177,7 @@ const HomePage = ({posts}) => {
 
   return(
     <div className="homepage-body">
-      <div 
+      {/* <div 
         style={{
           // color: 'red',
           display: 'flex',
@@ -132,20 +196,66 @@ const HomePage = ({posts}) => {
           handleFilterChange={handleFilterChange}
           handleInputChange={handleInputChange}
         />
-      </div>
+      </div> */}
       <div className="homepage-container">
         <div className="sidebar-container">
           <div className="sidebar">
             {
-              sideBarLinks.map((link, index) => (
-                <div className={`sidebar-link-cell ${ link === activeLink ? 'active' : ''}`} key={index} onClick={() => switchActiveTab(sideBarLinks.indexOf(link))}>
+              sideBarLinks.map(({linkText, icon}, index) => (
+                <div 
+                  className={`sidebar-link-cell ${ linkText === activeLink ? 'active' : ''}`} 
+                  key={index} 
+                  onClick={() => switchActiveTab(sideBarLinks.findIndex(link => link.linkText === linkText))}
+                >
                   <Link to={'/home'} className="sidebar-link">
-                    {link}
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
+                      <div>{icon} {linkText}</div>
+                      
+                      <div style={{ display: `${ openFilter && linkText === "Filter" ? ('block') : ('none')}`}}>
+                        <FormControl variant="outlined" className={classes.formControl}>
+                          <InputLabel id="demo-simple-select-outlined-label">Filter</InputLabel>
+                          <Select
+                            labelId="demo-simple-select-outlined-label"
+                            id="demo-simple-select-outlined"
+                            value={filter}
+                            onChange={handleFilterChange}
+                            label="filter"
+                          >
+                            <MenuItem value={'All'}>All</MenuItem>
+                            <MenuItem value={'CAD'}>CAD</MenuItem>
+                            <MenuItem value={'NGN'}>NGN</MenuItem>
+                          </Select>
+                        </FormControl>
+                      </div>
+                    </div>
+                    
+                    
+                    { openFilter && linkText === "Filter" ? (
+                      <div style={{margin: '3%'}}>
+                        <div>Rate :</div>
+                        <RangeSlider
+                          minMaxValue={minMaxValue}
+                          value={value}
+                          filter={filter}
+                          handleChange={handleChange}
+                          handleBlur={handleBlur}
+                          handleFilterChange={handleFilterChange}
+                          handleInputChange={handleInputChange}
+                        />
+                      </div>
+                      ) : (
+                        ''
+                      )
+                    }
                   </Link>
+
                 </div>
               ))
             }
-            <div className="logout-link">Logout</div>
+            <div className="logout-link">
+              <PowerSettingsNewIcon style={{ fontSize: 25}} className="mr-2" />
+              Logout
+            </div>
           </div>
         </div>
         <div className="post-section">
