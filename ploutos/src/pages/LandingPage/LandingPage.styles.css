@@ -8,6 +8,24 @@
   justify-content: space-between;
 }
 
+.rec.rec-dot_active{
+  background-color: rgba(13, 76, 158, .8) !important;
+  box-shadow: 0 0 1px 3px rgba(13, 76, 158, 1) !important;
+}
+
+.rec.rec-arrow:hover:enabled, .rec.rec-arrow:focus:enabled {
+  background-color: rgba(13, 76, 158, 1) !important;
+}
+
+.contact-us-textfield label{
+  font-size: 0.875rem;
+  color: rgba(13, 76, 158, 1);
+}
+
+.MuiInput-underline:before{
+  border-color: rgba(13, 76, 158, 1) !important;
+}
+
 .landing-page-container{
   width: 70%; 
   height: 85%;

@@ -57,10 +57,6 @@ const HomePage = ({posts}) => {
       linkText: "Messages",
       icon: <EmailIcon style={{ fontSize: 25}} className="mr-4"/>
     }, 
-    // {
-    //   linkText: "My Profile",
-    //   icon: <HomeIcon style={{ fontSize: 25}} className="mr-4"/>
-    // }, 
     {
       linkText: "Settings",
       icon: <SettingsIcon style={{ fontSize: 25}} className="mr-4"/>
@@ -212,7 +208,7 @@ const HomePage = ({posts}) => {
                       <div>{icon} {linkText}</div>
                       
                       <div style={{ display: `${ openFilter && linkText === "Filter" ? ('block') : ('none')}`}}>
-                        <FormControl variant="outlined" className={classes.formControl}>
+                        <FormControl variant="outlined" className={`${classes.formControl} whiteInputLabel`}>
                           <InputLabel id="demo-simple-select-outlined-label">Filter</InputLabel>
                           <Select
                             labelId="demo-simple-select-outlined-label"

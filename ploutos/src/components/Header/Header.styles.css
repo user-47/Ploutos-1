@@ -8,6 +8,7 @@
   background-color: #5A81B5;
   width: 100%;
   position: fixed;
+  z-index: 100;
 }
 
 .form-container{
@@ -26,8 +27,9 @@
   margin-left: 2%;
 }
 
-.login-btn{
+.login-reg-btn{
   width: 100%;
+  border-radius: 8px;
 }
 
 @media screen and (max-width: 750px) and (min-width: 300px) {

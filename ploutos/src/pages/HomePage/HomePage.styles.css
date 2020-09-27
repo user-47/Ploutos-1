@@ -15,7 +15,11 @@
   color: white !important;
 }
 
-.MuiFormLabel-root{
+/* .MuiFormLabel-root{
+  color: white !important;
+} */
+
+.whiteInputLabel label{
   color: white !important;
 }
 
