@@ -22,11 +22,11 @@ const SignUpModal = ({closeOnSubmit, ...props}) => {
 
   const [isLoading, setIsLoading] = React.useState(false);
 
-  const passwordErrorArray = ['At least one digit', 'At least one lowercase character', 'At least one uppercase character', 'At least 8 characters in length'];
+  // const passwordErrorArray = ['At least one digit', 'At least one lowercase character', 'At least one uppercase character', 'At least 8 characters in length'];
   const [errorMessage, setErrorMessage] = React.useState('');
 
-  let history = useHistory();
-  const { enqueueSnackbar } = useSnackbar();
+  // let history = useHistory();
+  // const { enqueueSnackbar } = useSnackbar();
 
   const handleChange = (e) => {
     const { name, value } = e.target;

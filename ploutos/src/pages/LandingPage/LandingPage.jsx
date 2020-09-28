@@ -2,11 +2,11 @@ import React from 'react';
 // import Button from "react-bootstrap/Button";
 // import Card from "react-bootstrap/Card";
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
+// import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import SignUpModal from '../../components/Modal/SignUpModal/SignUpModal.comp';
+// import SignUpModal from '../../components/Modal/SignUpModal/SignUpModal.comp';
 import Header from '../../components/Header/Header.comp';
 import Carousel from 'react-elastic-carousel';
 import TextField from '@material-ui/core/TextField';
@@ -67,19 +67,19 @@ const BannerSection = () => {
 const WhatMakesMyxchangeDifferentComponent = () => {
   return (
     <div>
-      <img src={require('../../assets/icons/heading-icon.svg')} style={{width: '28px', height: '28px'}} />
+      <img src={require('../../assets/icons/heading-icon.svg')} alt='icon' style={{width: '28px', height: '28px'}} />
       <div style={{color: '#0D4C9E'}}>
         <h4 style={{ marginTop: '2%', fontWeight: 'bold' }}>What makes myxchange different?</h4>
         <div style={{display: 'flex', width: '87%', marginTop: '2.5%'}}>
           <div style={{display: 'flex', width: '50%'}}>
-            <img src={require('../../assets/icons/instant_icon.png')} style={{width: '36px', height: '36px', margin: '2.5%'}} />
+            <img src={require('../../assets/icons/instant_icon.png')} alt='icon' style={{width: '36px', height: '36px', margin: '2.5%'}} />
             <div style={{ fontSize: '14px'}}>
               <div style={{ fontWeight: 'bold'}}>Competitive Rates</div>
               <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, officiis, inventore tempore amet</div>
             </div>
           </div>
           <div style={{display: 'flex', width: '50%'}}>
-            <img src={require('../../assets/icons/instant_icon.png')} style={{width: '36px', height: '36px', margin: '2.5%'}} />
+            <img src={require('../../assets/icons/instant_icon.png')} alt='icon' style={{width: '36px', height: '36px', margin: '2.5%'}} />
             <div style={{ fontSize: '14px'}}>
               <div style={{ fontWeight: 'bold'}}>Instant Transfer</div>
               <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, officiis, inventore tempore amet</div>
@@ -89,14 +89,14 @@ const WhatMakesMyxchangeDifferentComponent = () => {
 
         <div style={{display: 'flex', width: '87%', marginTop: '2.5%'}}>
           <div style={{display: 'flex', width: '50%'}}>
-            <img src={require('../../assets/icons/instant_icon.png')} style={{width: '36px', height: '36px', margin: '2.5%'}} />
+            <img src={require('../../assets/icons/instant_icon.png')} alt='icon' style={{width: '36px', height: '36px', margin: '2.5%'}} />
             <div style={{ fontSize: '14px'}}>
               <div style={{ fontWeight: 'bold'}}>Competitive Rates</div>
               <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, officiis, inventore tempore amet</div>
             </div>
           </div>
           <div style={{display: 'flex', width: '50%'}}>
-            <img src={require('../../assets/icons/instant_icon.png')} style={{width: '36px', height: '36px', margin: '2.5%'}} />
+            <img src={require('../../assets/icons/instant_icon.png')} alt='icon' style={{width: '36px', height: '36px', margin: '2.5%'}} />
             <div style={{ fontSize: '14px'}}>
               <div style={{ fontWeight: 'bold'}}>Instant Transfer</div>
               <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, officiis, inventore tempore amet</div>
@@ -188,7 +188,7 @@ const HowItWorksComponent = () => {
     <div style={{display: 'flex', justifyContent: 'flex-start', flexDirection: 'column', alignItems: 'flex-end'}}>
       {/* <img src={require('../../assets/images/p_heading.PNG')} style={{width: '28px', height: '28px'}} /> */}
       <div style={{color: '#0D4C9E', width: '75%'}}>
-        <img src={require('../../assets/images/p_heading.PNG')} style={{width: '28px', height: '28px'}} />
+        <img src={require('../../assets/images/p_heading.PNG')} alt='icon' style={{width: '28px', height: '28px'}} />
         <h4 style={{ marginTop: '2%', fontWeight: 'bold' }}>How it works</h4>
         <div style={{display: 'flex', width: '80%', marginTop: '2.5%', flexDirection: 'column'}}>
           <div>
@@ -275,18 +275,18 @@ const ContactUsImgSection = ({isContactFormSubmitted}) => {
             </div>
             {isContactFormSubmitted ? (
               <div>
-                <img src={require('../../assets/images/mail_icon.svg')} style={{ width: '175px', height: '175px'}} />
+                <img src={require('../../assets/images/mail_icon.svg')} alt='icon' style={{ width: '175px', height: '175px'}} />
               </div>
             ) : (
               <div style={{ width: '78%', marginTop: '-14%', marginLeft: '12%' }}>
-                <img src={require('../../assets/images/mail_icon.svg')} style={{ width: '175px', height: '175px'}} />
+                <img src={require('../../assets/images/mail_icon.svg')} alt='icon' style={{ width: '175px', height: '175px'}} />
               </div>
             )}
             
             <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
               <div style={{ fontSize: '0.875rem' }}>{isContactFormSubmitted ? ("We'll get in touch with you shortly") : ("We'll like to hear from you")}</div>
               {isContactFormSubmitted ? (
-                <a onClick={() => scroll.scrollToTop()} style={{ color: '#0D4C9E', cursor: 'pointer' }}>Top</a>
+                <div onClick={() => scroll.scrollToTop()} style={{ color: '#0D4C9E', cursor: 'pointer' }}>Top</div>
               ) : (
                 <div style={{ float: 'right', fontSize: '0.8rem', fontWeight: 'bold' }}>info@myxchange.com</div>
               )}
@@ -453,7 +453,7 @@ const LandingPage = () => {
       >
         <div style={{ color: '#0D4C9E', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', marginTop: '3%', marginBottom: '4.5%' }}>
           <div style={{ width: '30%' }}>
-            <img src={require('../../assets/icons/heading-icon.svg')} style={{width: '28px', height: '28px'}} />
+            <img src={require('../../assets/icons/heading-icon.svg')} alt='icon' style={{width: '28px', height: '28px'}} />
             <h4 style={{ marginTop: '4.5%', fontWeight: 'bold' }}>What People Think.</h4>
           </div>
         </div>
