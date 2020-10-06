@@ -21,8 +21,8 @@ const scroll = Scroll.animateScroll;
 
 const BannerSection = () => {
   return (
-    <div id="bannerRegion">
-      <div 
+    <div>
+      <div className=""
         style={{
           width: '100%',
           height: '860px',
@@ -33,6 +33,7 @@ const BannerSection = () => {
         }}
       >
         <div
+          className="banner-text-overlay"
           style={{
             marginTop: '5%',
             marginLeft: '6%',
@@ -51,7 +52,7 @@ const BannerSection = () => {
               marginLeft: '8%'
             }}
           >
-            <div style={{fontSize: '85px', lineHeight: '0.9', fontWeight: 'bold'}}>
+            <div className="resp-banner-text" style={{fontSize: '75px', lineHeight: '0.9', fontWeight: 'bold'}}>
               EXCHANGE <br/>
               NAIRA <br/>
               AND CAD <br/>
@@ -70,15 +71,15 @@ const WhatMakesMyxchangeDifferentComponent = () => {
       <img src={require('../../assets/icons/heading-icon.svg')} alt='icon' style={{width: '28px', height: '28px'}} />
       <div style={{color: '#0D4C9E'}}>
         <h4 style={{ marginTop: '2%', fontWeight: 'bold' }}>What makes myxchange different?</h4>
-        <div style={{display: 'flex', width: '87%', marginTop: '2.5%'}}>
-          <div style={{display: 'flex', width: '50%'}}>
+        <div className="what-makes-myexchange-different-row">
+          <div className="what-makes-myexchange-different-point">
             <img src={require('../../assets/icons/instant_icon.png')} alt='icon' style={{width: '36px', height: '36px', margin: '2.5%'}} />
             <div style={{ fontSize: '14px'}}>
               <div style={{ fontWeight: 'bold'}}>Competitive Rates</div>
               <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, officiis, inventore tempore amet</div>
             </div>
           </div>
-          <div style={{display: 'flex', width: '50%'}}>
+          <div className="what-makes-myexchange-different-point">
             <img src={require('../../assets/icons/instant_icon.png')} alt='icon' style={{width: '36px', height: '36px', margin: '2.5%'}} />
             <div style={{ fontSize: '14px'}}>
               <div style={{ fontWeight: 'bold'}}>Instant Transfer</div>
@@ -87,15 +88,15 @@ const WhatMakesMyxchangeDifferentComponent = () => {
           </div>
         </div>
 
-        <div style={{display: 'flex', width: '87%', marginTop: '2.5%'}}>
-          <div style={{display: 'flex', width: '50%'}}>
+        <div className="what-makes-myexchange-different-row">
+          <div className="what-makes-myexchange-different-point">
             <img src={require('../../assets/icons/instant_icon.png')} alt='icon' style={{width: '36px', height: '36px', margin: '2.5%'}} />
             <div style={{ fontSize: '14px'}}>
               <div style={{ fontWeight: 'bold'}}>Competitive Rates</div>
               <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, officiis, inventore tempore amet</div>
             </div>
           </div>
-          <div style={{display: 'flex', width: '50%'}}>
+          <div className="what-makes-myexchange-different-point">
             <img src={require('../../assets/icons/instant_icon.png')} alt='icon' style={{width: '36px', height: '36px', margin: '2.5%'}} />
             <div style={{ fontSize: '14px'}}>
               <div style={{ fontWeight: 'bold'}}>Instant Transfer</div>
@@ -119,8 +120,9 @@ const SectionImg = ({
   imgMarginLeft = '0'
 }) => {
   return (
-    <div style={{height: `${largeCircleSize}`, width: `${largeCircleSize}`,}}>
+    <div style={{height: `${largeCircleSize}`, width: `${largeCircleSize}`,}} className='section-img'>
       <div
+        className="large-circle"
         style={{
           height: `${largeCircleSize}`,
           width: `${largeCircleSize}`,
@@ -132,7 +134,8 @@ const SectionImg = ({
         {/* <div style={{ height: `${smallCircleSize}`, width: `${smallCircleSize}`, borderRadius: '50%', backgroundColor: '#6BA8F8', float: 'right', marginRight: '-7%',position: 'relative', zIndex: '-1'}}></div> */}
         {/* <img src="../../assets/images/Laptop_mockup.png" /> */}
         <div style={{ display: `${secondaryImg ? ('flex') : ('block')}`, zIndex: '2', position: 'relative'}}>
-          <div 
+          <div
+            className={`section-pry-img ${secondaryImg ? 'responsive-section-pry-img' : ''}`}
             style={{
               backgroundImage: `url(${pryImg})`,
               backgroundSize: 'contain',
@@ -146,7 +149,8 @@ const SectionImg = ({
           ></div>
           {
             secondaryImg ? (
-              <div 
+              <div
+                className="section-secondary-img"
                 style={{
                   backgroundImage: `url(${secondaryImg})`,
                   backgroundSize: 'contain',
@@ -164,7 +168,8 @@ const SectionImg = ({
           
         </div>
       </div>
-      <div 
+      <div
+        className="small-circle"
         style={{ 
           height: `${smallCircleSize}`,
           width: `${smallCircleSize}`,
@@ -185,20 +190,17 @@ const SectionImg = ({
 
 const HowItWorksComponent = () => {
   return (
-    <div style={{display: 'flex', justifyContent: 'flex-start', flexDirection: 'column', alignItems: 'flex-end'}}>
-      {/* <img src={require('../../assets/images/p_heading.PNG')} style={{width: '28px', height: '28px'}} /> */}
-      <div style={{color: '#0D4C9E', width: '75%'}}>
+    <div className="resp-how-it-works-content-container" style={{display: 'flex', justifyContent: 'flex-start', flexDirection: 'column', alignItems: 'flex-end'}}>
+      <div className="full-width" style={{color: '#0D4C9E', width: '75%'}}>
         <img src={require('../../assets/images/p_heading.PNG')} alt='icon' style={{width: '28px', height: '28px'}} />
         <h4 style={{ marginTop: '2%', fontWeight: 'bold' }}>How it works</h4>
-        <div style={{display: 'flex', width: '80%', marginTop: '2.5%', flexDirection: 'column'}}>
+        <div className="full-width" style={{display: 'flex', width: '80%', marginTop: '2.5%', flexDirection: 'column'}}>
           <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia aut ad quisquam corporis. Eum voluptates voluptatem omnis, repudiandae esse officiis, quos ipsum suscipit voluptatibus et nam possimus vero tempore corrupti.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia aut ad quisquam corporis. Eum voluptates voluptatem omnis, repudiandae esse officiis, quos ipsum suscipit voluptatibus et nam possimus vero tempore corrupti.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia aut ad quisquam corporis. Eum voluptates voluptatem omnis.
           </div>
           <br/>
           <div>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio mollitia, magni sequi placeat aliquam aut voluptatem quia accusamus, aliquid consequuntur iusto ad, voluptas corrupti. Corporis numquam commodi impedit culpa omnis.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia aut ad quisquam corporis. Eum voluptates voluptatem omnis, repudiandae esse officiis, quos ipsum suscipit voluptatibus et nam possimus vero tempore corrupti.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio mollitia, magni sequi placeat aliquam aut voluptatem quia.
           </div>
         </div>
       </div>
@@ -208,7 +210,7 @@ const HowItWorksComponent = () => {
 
 const ContactUsForm = ({onContactFormSubmission}) => {
   return(
-    <div style={{ width: '55%'}}>
+    <div className="responsive-contact-form" style={{ width: '55%'}}>
       <form
         noValidate
         autoComplete="off"
@@ -249,9 +251,10 @@ const ContactUsImgSection = ({isContactFormSubmitted}) => {
       }}
     >
       <div
+        className="full-width"
         style={{
           backgroundImage: `url(${require('../../assets/images/contact-us-bg.svg')})`,
-          width: '65%',
+          width: '70%',
           height: '500px',
           backgroundPosition: 'center',
           backgroundSize: 'contain',
@@ -260,33 +263,37 @@ const ContactUsImgSection = ({isContactFormSubmitted}) => {
       >
         <div>
           <div
+            className="responsive-contact-us-img-section-content"
             style={{
               display: 'flex',
               alignItems: 'center',
-              marginTop: `${isContactFormSubmitted ? '5%' : '13%'}`,
+              marginTop: `${isContactFormSubmitted ? '7%' : '14%'}`,
               marginRight: `${isContactFormSubmitted ? '4%' : '' }`,
               flexDirection: 'column',
               color: '#0D4C9E',
             }}
           >
-            <div style={{ fontSize: '3rem', fontWeight: 'bold'}}>
+            <div className="resp-contact-us-img-section-title" style={{ fontSize: '3rem', fontWeight: 'bold'}}>
               <div>{isContactFormSubmitted ? <p>Thanks for <br/> contacting Us</p> : 'Contact'}</div>
               {isContactFormSubmitted ? (null) : (<div style={{ float: 'right'}}>Us</div>)}
             </div>
             {isContactFormSubmitted ? (
-              <div>
-                <img src={require('../../assets/images/mail_icon.svg')} alt='icon' style={{ width: '175px', height: '175px'}} />
+              <div style={{ marginTop: '3%', marginBottom: '5%'}}>
+                <img src={require('../../assets/images/closed_envelope.png')} alt='icon' style={{ width: '140px', height: '77px'}} className="resp-closed-envelope" />
               </div>
             ) : (
               <div style={{ width: '78%', marginTop: '-14%', marginLeft: '12%' }}>
-                <img src={require('../../assets/images/mail_icon.svg')} alt='icon' style={{ width: '175px', height: '175px'}} />
+                <img src={require('../../assets/images/mail_icon.svg')} alt='icon' style={{ width: '175px', height: '175px'}} className="resp-mail-icon-envelope" />
               </div>
             )}
             
             <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
               <div style={{ fontSize: '0.875rem' }}>{isContactFormSubmitted ? ("We'll get in touch with you shortly") : ("We'll like to hear from you")}</div>
               {isContactFormSubmitted ? (
-                <div onClick={() => scroll.scrollToTop()} style={{ color: '#0D4C9E', cursor: 'pointer' }}>Top</div>
+                <div onClick={() => scroll.scrollToTop()} style={{ color: '#0D4C9E', cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '15%' }}>
+                  <img src={require('../../assets/icons/goto-top.svg')} alt='icon' style={{ width: '17px', height: '17px'}} />
+                  <div style={{ fontSize: '10px' }}>Back To Top</div>
+                </div>
               ) : (
                 <div style={{ float: 'right', fontSize: '0.8rem', fontWeight: 'bold' }}>info@myxchange.com</div>
               )}
@@ -298,10 +305,11 @@ const ContactUsImgSection = ({isContactFormSubmitted}) => {
   )
 }
 
-const PairedSection = ({ rightComponent, leftComponent, isContactFormSubmitted }) => {
+const PairedSection = ({ rightComponent, leftComponent, isContactFormSubmitted, respReverseColumn }) => {
   
   return (
     <div
+      className={`${respReverseColumn ? 'reverse-column-section' : 'make-column'}`}
       style={{
         display: 'flex',
         width: '100%', 
@@ -310,7 +318,8 @@ const PairedSection = ({ rightComponent, leftComponent, isContactFormSubmitted }
         alignItems: 'center',
       }}
     >
-      <div 
+      <div
+        className={`${respReverseColumn ? 'responsive-reverse-column-section' : 'full-width'}`}
         style={{
           width: `${isContactFormSubmitted ? '0' : '50%'}`,
           height: `${isContactFormSubmitted ? '0' : 'auto'}`,
@@ -323,7 +332,8 @@ const PairedSection = ({ rightComponent, leftComponent, isContactFormSubmitted }
       >
         {leftComponent}
       </div>
-      <div 
+      <div
+        className={`${respReverseColumn ? 'responsive-reverse-column-section adjust-content' : 'full-width'}`}
         style={{
           width: `${isContactFormSubmitted ? '100%' : '50%'}`,
           // marginTop: '3%',
@@ -341,8 +351,11 @@ const FooterSection = () => {
   const date = new Date();
   return (
     <div
+      className="responsive-footer"
       style={{
         backgroundImage: `url(${require('../../assets/images/footer_bg_color.svg')})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
         width: '100%',
         height: '200px',
         color: '#0D4C9E'
@@ -357,21 +370,21 @@ const FooterSection = () => {
           flexDirection: 'column'
           }}
         >
-        <div style={{display: 'flex', justifyContent: 'space-between', height: '35%', alignItems: 'center'}}>
-          <div style={{fontSize: '0.875rem'}}>
+        <div className="footer-links" style={{display: 'flex', justifyContent: 'space-between', height: '35%', alignItems: 'center'}}>
+          <div style={{fontSize: '0.875rem'}} className="link-row">
             <span className="px-3" style={{ borderRight: 'solid 1.8px #0D4C9E' }} >About Us</span>
             <span className="px-3" style={{ borderRight: 'solid 1.8px #0D4C9E' }} >FAQs</span>
             <span className="px-3" style={{ borderRight: 'solid 1.8px #0D4C9E' }} >Privacy Policy</span>
             <span className="px-3" style={{ borderRight: 'solid 1.8px #0D4C9E' }} >Licenses</span>
             <span className="px-3" >Contact</span>
           </div>
-          <div style={{ width: '20%', display: 'flex', justifyContent: 'space-between', marginRight: '-25%' }} >
-            <span><InstagramIcon style={{ fontSize: '17px' }} /></span>
-            <span><TwitterIcon style={{ fontSize: '17px' }} /></span>
+          <div className="social-icons-row" style={{ width: '20%', display: 'flex', justifyContent: 'space-between', marginRight: '-25%' }} >
+            <span><InstagramIcon style={{ fontSize: '17px' }} className="social-icons" /></span>
+            <span><TwitterIcon style={{ fontSize: '17px' }} className="social-icons" /></span>
           </div>
         </div>
         <hr style={{ width: '16%', marginTop: 0 }}></hr>
-        <div style={{ fontSize: '12px', paddingBottom: '12px', marginTop: '1%' }} >Copyright {date.getFullYear()}</div>
+        <div className="copyright" style={{ fontSize: '12px', paddingBottom: '12px', marginTop: '1%' }} >Copyright {date.getFullYear()}</div>
       </div>
     </div>
   )
@@ -391,6 +404,7 @@ const LandingPage = () => {
       <BannerSection />
       {/* start what makes myxchange different section */}
       <section
+        className="section-row"
         style={{
           padding: '40px'
         }}
@@ -410,6 +424,7 @@ const LandingPage = () => {
 
       {/* start how it works section */}
       <section
+        className="section-row resp-how-it-works-section"
         style={{
           padding: '40px',
           marginTop: '5%',
@@ -435,12 +450,14 @@ const LandingPage = () => {
             />
           }
           leftComponent={<HowItWorksComponent />}
+          respReverseColumn={true}
         />
       </section>
       {/* end how it works section */}
 
       {/* start testimonial section */}
       <section
+        className="adjust-padding"
         style={{
           padding: '40px',
           marginTop: '5%',
@@ -451,31 +468,46 @@ const LandingPage = () => {
           flexDirection: 'column',
         }}
       >
-        <div style={{ color: '#0D4C9E', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', marginTop: '3%', marginBottom: '4.5%' }}>
-          <div style={{ width: '30%' }}>
+        <div style={{ color: '#0D4C9E', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', marginTop: '3%', marginBottom: '1.5%' }}>
+          <div>
             <img src={require('../../assets/icons/heading-icon.svg')} alt='icon' style={{width: '28px', height: '28px'}} />
             <h4 style={{ marginTop: '4.5%', fontWeight: 'bold' }}>What People Think.</h4>
           </div>
         </div>
-        <Carousel itemsToScroll={1} itemsToShow={2} enableAutoPlay autoPlaySpeed={5000}>
-          {
-            testimonials.map((index) => (
-              <Card style={{ width: '60%', border: '1px solid #0D4C9E', color:'#0D4C9E' }}  variant="outlined" key={index} >
-                <CardContent>
-                  <Typography variant="body2" component="p">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore exercitationem laboriosam quo, ea dolore deserunt accusantium repellendus nihil, sit delectus fugiat rerum molestias dolor eos necessitatibus. Sint dolore ratione quo.
-                    sit delectus fugiat rerum molestias dolor eos necessitatibus. Sint dolore ratione quo.
-                  </Typography>
-                </CardContent>
-              </Card>
-            ))
-          }
-        </Carousel>
+        <div 
+          style={{
+            backgroundImage: `url(${require('../../assets/images/testimonial_bg.png')})`,
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            width: '100%',
+            height: '350px',
+            display: 'flex',
+            alignItems: 'center'
+          }}
+        >
+          <Carousel itemsToScroll={1} itemsToShow={window.innerWidth <= 1200 ? (1) : (2)} enableAutoPlay autoPlaySpeed={5000}>
+            {
+              testimonials.map((index) => (
+                <Card className="full-width" style={{ width: '70%', border: '1px solid #0D4C9E', color:'#0D4C9E' }}  variant="outlined" key={index} >
+                  <CardContent>
+                    <Typography variant="body2" component="p">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore exercitationem laboriosam quo, ea dolore deserunt accusantium repellendus nihil, sit delectus fugiat rerum molestias dolor eos necessitatibus. Sint dolore ratione quo.
+                      sit delectus fugiat rerum molestias dolor eos necessitatibus. Sint dolore ratione quo.
+                    </Typography>
+                  </CardContent>
+                </Card>
+              ))
+            }
+          </Carousel>
+        </div>
+        
       </section>
       {/* end testimonial section */}
 
       {/* start contact us section */}
       <section
+        className="section-row adjust-padding"
         style={{
           padding: '40px'
         }}
@@ -484,14 +516,15 @@ const LandingPage = () => {
           rightComponent={<ContactUsImgSection isContactFormSubmitted={contactFormSubmitted}/>}
           leftComponent={<ContactUsForm onContactFormSubmission={onContactFormSubmit} />}
           isContactFormSubmitted={contactFormSubmitted}
+          respReverseColumn={true}
         />
       </section>
       {/* end contact us section */}
       
       {/* start footer section */}
-      <section>
+      <footer>
         <FooterSection />
-      </section>
+      </footer>
       {/* end footer section */}
     </div>
   )

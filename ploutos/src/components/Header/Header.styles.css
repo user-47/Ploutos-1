@@ -5,7 +5,8 @@
 .navbar-container{
   display: flex;
   justify-content: space-between;
-  background-color: #5A81B5;
+  background-color: #0D4C9E;
+  box-shadow: 0px 8px 6px 0px #316DBC;
   width: 100%;
   position: fixed;
   z-index: 100;
@@ -32,9 +33,27 @@
   border-radius: 8px;
 }
 
-@media screen and (max-width: 750px) and (min-width: 300px) {
-  .hamburger-icon{
+@media screen and (max-width: 1200px) and (min-width: 300px) {
+  /* .hamburger-icon{
     display: block;
+  } */
+
+  .navbar-container{
+    padding: 5px !important;
+  }
+
+  .header-title{
+    font-size: 15px !important;
+  }
+
+  .login-reg-btn{
+    font-size: 12px;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+  }
+
+  .header-buttons{
+    width: auto !important;
   }
 
   .responsive-navbrand{
