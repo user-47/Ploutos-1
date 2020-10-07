@@ -30,7 +30,7 @@ const Header = () => {
           <Button type="submit" variant="outline-light" className="login-reg-btn px-4">Login</Button>
         </Link>
 
-        <Link to="/home" className={`btn-link`}>
+        <Link to="/register" className={`btn-link`}>
           <Button type="submit" variant="danger" className="login-reg-btn px-4">Register</Button>
         </Link>
       </div>

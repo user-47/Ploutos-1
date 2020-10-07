@@ -1,0 +1,14 @@
+.registration-form-textfield label{
+  font-size: 0.775rem;
+  color: rgba(13, 76, 158, 1);
+}
+
+.registration-form-textfield{
+  width: 80%;
+  /* color: rgba(13, 76, 158, 1); */
+}
+
+#standard-basic-helper-text{
+  font-size: 0.675rem;
+  color: rgba(13, 76, 158, 1);
+}
