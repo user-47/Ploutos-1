@@ -267,7 +267,7 @@ const ContactUsImgSection = ({isContactFormSubmitted}) => {
             style={{
               display: 'flex',
               alignItems: 'center',
-              marginTop: `${isContactFormSubmitted ? '7%' : '14%'}`,
+              marginTop: `${isContactFormSubmitted ? '4%' : '14%'}`,
               marginRight: `${isContactFormSubmitted ? '4%' : '' }`,
               flexDirection: 'column',
               color: '#0D4C9E',
@@ -355,7 +355,8 @@ const FooterSection = () => {
       style={{
         backgroundImage: `url(${require('../../assets/images/footer_bg_color.svg')})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'top',
+        backgroundRepeat: 'no-repeat',
         width: '100%',
         height: '200px',
         color: '#0D4C9E'

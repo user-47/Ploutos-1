@@ -1,0 +1,14 @@
+.login-form-textfield label{
+  font-size: 0.775rem;
+  color: rgba(13, 76, 158, 1);
+}
+
+.login-form-textfield{
+  width: 80%;
+  /* color: rgba(13, 76, 158, 1); */
+}
+
+#input-with-icon-textfield-helper-text{
+  font-size: 0.775rem;
+  color: rgba(13, 76, 158, 1);
+}

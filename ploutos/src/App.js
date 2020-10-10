@@ -4,6 +4,7 @@ import LandingPage from './pages/LandingPage/LandingPage';
 import HomePage from './pages/HomePage/HomePage';
 import SignUpAuthenticationPage from './pages/SignUpAuthenticationPage/SignUpAuthenticationPage';
 import RegistrationPage from './pages/RegistrationPage/RegistrationPage';
+import LoginPage from './pages/LoginPage/LoginPage';
 import './App.css'
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
           <Route exact path='/' component={LandingPage} />
           <Route path='/home' component={HomePage} />
           <Route path='/register' component={RegistrationPage} />
+          <Route path='/login' component={LoginPage} />
           <Route path='/signupAuth' component={SignUpAuthenticationPage} />
         </Switch>
       </div>

@@ -3,6 +3,7 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import './RegistrationPage.style.css';
+import { Link } from 'react-router-dom';
 
 const RegistrationPage = () => {
   return (
@@ -33,21 +34,23 @@ const RegistrationPage = () => {
           style={{
             width: '32%',
             height: '100%',
-            backgroundImage: `url(${require('../../assets/images/registration_page_card_bg.svg')})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
+            // backgroundImage: `url(${require('../../assets/images/registration_page_card_bg.svg')})`,
+            // backgroundSize: 'cover',
+            // backgroundPosition: 'center',
+            // backgroundRepeat: 'no-repeat',
             padding: '10px',
           }}
         >
-          <img
-          src="../../assets/images/temp_logo.svg"
-          width="95"
-          height="85"
-          className="d-inline-block align-top"
-          alt="logo"
-          style={{ position: 'fixed'}}
-        />
+          <Link to='/'>
+            <img
+              src="../../assets/images/temp_logo.svg"
+              width="95"
+              height="85"
+              className="d-inline-block align-top"
+              alt="logo"
+              style={{ position: 'fixed'}}
+            />
+          </Link>
         <div
           style={{
             height: '100%',
@@ -76,7 +79,7 @@ const RegistrationPage = () => {
           <div style={{ color: '#0D4C9E'}}>
             <img src={require('../../assets/icons/heading-icon.svg')} alt='icon' className='mt-2 mb-2' style={{width: '28px', height: '28px'}} />
             <div style={{ fontSize: '30px'}}><b>REGISTRATION</b></div>
-            <p style={{ fontSize: '12px' }}>Already have an account? <b>Login here</b></p>
+            <p style={{ fontSize: '12px' }}>Already have an account? <Link to='/login' style={{ color: '#0D4C9E', textDecoration: 'none'}}><b>Login here</b></Link></p>
           </div>
           <div>
             <form

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.styles.css';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 // import { Navbar, Form, Button, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Navbar from "react-bootstrap/Navbar";
@@ -26,7 +26,7 @@ const Header = () => {
       </Navbar.Brand>
       
       <div className="header-buttons" style={{ display: 'flex', width: '13%', justifyContent: 'space-between'}}>
-        <Link to="/home" className={`btn-link`}>
+        <Link to="/login" className={`btn-link`}>
           <Button type="submit" variant="outline-light" className="login-reg-btn px-4">Login</Button>
         </Link>
 
