@@ -12,3 +12,197 @@
   font-size: 0.675rem;
   color: rgba(13, 76, 158, 1);
 }
+
+@media screen and (max-width: 600px) and (min-width: 250px) {
+  .reg-container{
+    height: auto !important;
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+  }
+  .reg-page{
+    height: auto !important;
+    border-radius: 23px;
+  }
+  .logo-img{
+    width: 75px !important;
+    height: 65px !important;
+    position: relative !important;
+  }
+  .reg-container-img{
+    display: none !important;
+  }
+  .reg-form-section{
+    width: 100% !important;
+    /* margin-top: 10%; */
+  }
+  .title-icon{
+    display: none !important;
+  }
+  .registration-form-textfield{
+    width: 100%;
+  }
+  .registration-form-textfield label{
+    font-size: 0.575rem;
+  }
+  .state-province-container{
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between;
+  }
+  .state-province-field{
+    width: 45% !important;
+  }
+  .button-container{
+    width: 100% !important;
+  }
+  .finish-button{
+    width: 30% !important;
+  }
+}
+
+@media screen and (max-width: 900px) and (min-width: 601px) {
+  .reg-container{
+    height: auto !important;
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+  }
+  .reg-page{
+    height: auto !important;
+    border-radius: 23px;
+  }
+  .logo-img{
+    width: 75px !important;
+    height: 65px !important;
+    position: relative !important;
+  }
+  .reg-container-img{
+    display: none !important;
+  }
+  .reg-form-section{
+    width: 100% !important;
+    /* margin-top: 10%; */
+  }
+  .title-icon{
+    display: none !important;
+  }
+  .registration-form-textfield{
+    width: 100%;
+  }
+  .registration-form-textfield label{
+    font-size: 0.775rem;
+  }
+  .state-province-container{
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between;
+  }
+  .state-province-field{
+    width: 45% !important;
+  }
+  .button-container{
+    width: 100% !important;
+  }
+  .finish-button{
+    width: 30% !important;
+  }
+}
+
+@media screen and (max-width: 1025px) and (min-width: 901px) {
+  .reg-container{
+    height: 90% !important;
+    width: 90% !important;
+    display: flex;
+    flex-direction: column;
+  }
+  .reg-page{
+    height: auto !important;
+    border-radius: 23px;
+  }
+  .logo-img{
+    width: 75px !important;
+    height: 65px !important;
+    position: relative !important;
+  }
+  .reg-container-img{
+    display: none !important;
+  }
+  .reg-form-section{
+    width: 100% !important;
+    /* margin-top: 10%; */
+  }
+  .title-icon{
+    display: none !important;
+  }
+  .registration-form-textfield{
+    width: 100%;
+  }
+  .registration-form-textfield label{
+    font-size: 0.775rem;
+  }
+  .state-province-container{
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between;
+  }
+  .state-province-field{
+    width: 45% !important;
+  }
+  .button-container{
+    width: 100% !important;
+  }
+  .finish-button{
+    width: 30% !important;
+  }
+}
+
+@media screen and (max-width: 1600px) and (min-width: 1026px) {
+  .reg-container{
+    height: auto !important;
+    width: 75% !important;
+    display: flex;
+    /* flex-direction: column; */
+  }
+  /* .reg-page{
+    height: auto !important;
+    border-radius: 23px;
+  }
+  .logo-img{
+    width: 75px !important;
+    height: 65px !important;
+    position: relative !important;
+  } */
+  .reg-container-img{
+    width: 300px !important;
+    height: 260px !important;
+    margin-top: 55% !important;
+  }
+  .reg-form-section{
+    width: 100% !important;
+    /* margin-top: 10%; */
+  }
+  .title-icon{
+    display: none !important;
+  }
+  .registration-form-textfield{
+    width: 100%;
+  }
+  .registration-form-textfield label{
+    font-size: 0.775rem;
+  }
+  .state-province-container{
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between;
+  }
+  .state-province-field{
+    width: 45% !important;
+  }
+  .button-container{
+    width: 100% !important;
+  }
+  .finish-button{
+    width: 30% !important;
+  }
+}
